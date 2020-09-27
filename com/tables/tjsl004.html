@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="../../plugins/layui/css/layui.css"
+      media="all"
+    />
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+      }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+      .tableContent td {
+        min-height: 10px;
+        line-height: 15px;
+        height: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 细骨料试验记录（一） -->
+    <form id="form" action="" method="post" onsubmit="return false;">
+      <div class="paperA4 paperA4-vertical">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+          <table class="layui-table" style="border-bottom: none">
+            <tr>
+              <td rowspan="6" style="width: 80px">
+                仪器设备<br />及<br />环境条件
+              </td>
+              <td>仪器设备名称</td>
+              <td>型号</td>
+              <td>管理编号</td>
+              <td>示值范围</td>
+              <td>分辨力</td>
+              <td>温度（℃）</td>
+              <td>相对湿度（%）</td>
+            </tr>
+            <tr>
+              <td><textarea autoheight name="sbmc1" id="sbmc1"></textarea></td>
+              <td><textarea autoheight name="xh1" id="xh1"></textarea></td>
+              <td><textarea autoheight name="glbh1" id="glbh1"></textarea></td>
+              <td><textarea autoheight name="szfw1" id="szfw1"></textarea></td>
+              <td><textarea autoheight name="fbl1" id="fbl1"></textarea></td>
+              <td><textarea autoheight name="wd1" id="wd1"></textarea></td>
+              <td><textarea autoheight name="xdsd1" id="xdsd1"></textarea></td>
+            </tr>
+            <tr>
+              <td><textarea autoheight name="sbmc2" id="sbmc2"></textarea></td>
+              <td><textarea autoheight name="xh2" id="xh2"></textarea></td>
+              <td><textarea autoheight name="glbh2" id="glbh2"></textarea></td>
+              <td><textarea autoheight name="szfw2" id="szfw2"></textarea></td>
+              <td><textarea autoheight name="fbl2" id="fbl2"></textarea></td>
+              <td><textarea autoheight name="wd2" id="wd2"></textarea></td>
+              <td><textarea autoheight name="xdsd2" id="xdsd2"></textarea></td>
+            </tr>
+            <tr>
+              <td><textarea autoheight name="sbmc3" id="sbmc3"></textarea></td>
+              <td><textarea autoheight name="xh3" id="xh3"></textarea></td>
+              <td><textarea autoheight name="glbh3" id="glbh3"></textarea></td>
+              <td><textarea autoheight name="szfw3" id="szfw3"></textarea></td>
+              <td><textarea autoheight name="fbl3" id="fbl3"></textarea></td>
+              <td><textarea autoheight name="wd3" id="wd3"></textarea></td>
+              <td><textarea autoheight name="xdsd3" id="xdsd3"></textarea></td>
+            </tr>
+            <tr>
+              <td><textarea autoheight name="sbmc4" id="sbmc4"></textarea></td>
+              <td><textarea autoheight name="xh4" id="xh4"></textarea></td>
+              <td><textarea autoheight name="glbh4" id="glbh4"></textarea></td>
+              <td><textarea autoheight name="szfw4" id="szfw4"></textarea></td>
+              <td><textarea autoheight name="fbl4" id="fbl4"></textarea></td>
+              <td><textarea autoheight name="wd4" id="wd4"></textarea></td>
+              <td><textarea autoheight name="xdsd4" id="xdsd4"></textarea></td>
+            </tr>
+            <tr>
+              <td><textarea autoheight name="sbmc5" id="sbmc5"></textarea></td>
+              <td><textarea autoheight name="xh5" id="xh5"></textarea></td>
+              <td><textarea autoheight name="glbh5" id="glbh5"></textarea></td>
+              <td><textarea autoheight name="szfw5" id="szfw5"></textarea></td>
+              <td><textarea autoheight name="fbl5" id="fbl5"></textarea></td>
+              <td><textarea autoheight name="wd5" id="wd5"></textarea></td>
+              <td><textarea autoheight name="xdsd5" id="xdsd5"></textarea></td>
+            </tr>
+            <tr>
+              <td>样品状态描述</td>
+              <td colspan="4">
+                <textarea autoheight name="ypztms" id="ypztms"></textarea>
+              </td>
+              <td>采用标准</td>
+              <td colspan="2">
+                <textarea autoheight name="cybz" id="cybz"></textarea>
+              </td>
+            </tr>
+          </table>
+          <!-- 表观密度 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="8">（1）表观密度</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="width: 30px">次数</td>
+              <td rowspan="2">试样质量$m_{0}$(g)</td>
+              <td rowspan="2">瓶+水+试样质量$m_{1}$(g)</td>
+              <td rowspan="2">瓶+水质量$m_{2}$(g)</td>
+              <td rowspan="2">试验水温$t$(℃)</td>
+              <td rowspan="2">温度修正系数$a_{t}$</td>
+              <td colspan="2">表观密度$\rho$(kg/$m^3$)</td>
+            </tr>
+            <tr>
+              <td style="width: 168px">
+                $\rho=(\frac{m_{0}}{m_{0}+m_{2}-m_{1}}-a_{t}*1000)$
+              </td>
+              <td style="width: 75px">平均值</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="syzl01" id="syzl01" /></td>
+              <td><input type="text" name="pssyzl01" id="pssyzl01" /></td>
+              <td><input type="text" name="pszl01" id="pszl01" /></td>
+              <td><input type="text" name="sysw01" id="sysw01" /></td>
+              <td><input type="text" name="wdxzxs01" id="wdxzxs01" /></td>
+              <td>
+                <input type="text" readonly name="bgmd01" id="bgmd01" />
+              </td>
+              <td rowspan="2">
+                <input
+                  type="text"
+                  readonly
+                  style="width: 50px"
+                  name="bgmdpjz"
+                  id="bgmdpjz"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="syzl02" id="syzl02" /></td>
+              <td><input type="text" name="pssyzl02" id="pssyzl02" /></td>
+              <td><input type="text" name="pszl02" id="pszl02" /></td>
+              <td><input type="text" name="sysw02" id="sysw02" /></td>
+              <td><input type="text" name="wdxzxs02" id="wdxzxs02" /></td>
+              <td>
+                <input type="text" readonly name="bgmd02" id="bgmd02" />
+              </td>
+            </tr>
+          </table>
+          <!-- 堆积密度 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="6">（2）堆积密度</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="width: 30px">次数</td>
+              <td rowspan="2">筒+砂质量$m_{1}$(g)</td>
+              <td rowspan="2">筒质量$m_{2}$(g)</td>
+              <td rowspan="2">筒容积V(L)</td>
+              <td colspan="2">堆积密度$\rho_{L}$(kg/$m^3$)</td>
+            </tr>
+            <tr>
+              <td>$\rho_{L}=[(m_{2}-m_{1})/V]*1000$</td>
+              <td style="width: 75px">平均值</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="tszl01" id="tszl01" /></td>
+              <td><input type="text" name="tzl01" id="tzl01" /></td>
+              <td><input type="text" name="trj01" id="trj01" /></td>
+              <td>
+                <input type="text" readonly name="djmd01" id="djmd01" />
+              </td>
+              <td rowspan="2">
+                <input
+                  type="text"
+                  readonly
+                  style="width: 50px"
+                  name="djmdpjz"
+                  id="djmdpjz"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="tszl02" id="tszl02" /></td>
+              <td><input type="text" name="tzl02" id="tzl02" /></td>
+              <td><input type="text" name="trj02" id="trj02" /></td>
+              <td>
+                <input type="text" readonly name="djmd02" id="djmd02" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">堆积空隙率$v_{L}%$</td>
+              <td colspan="2" style="text-align: left">
+                $v_{L}=(1-\rho_{L}/\rho)*100=$
+              </td>
+              <td colspan="2">
+                <input type="text" readonly name="djkxl" id="djkxl" />
+              </td>
+            </tr>
+          </table>
+          <!-- 紧密密度 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="6">（3）紧密密度</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="width: 30px">次数</td>
+              <td rowspan="2">筒+砂质量$m_{1}$(g)</td>
+              <td rowspan="2">筒质量$m_{2}$(g)</td>
+              <td rowspan="2">筒容积V(L)</td>
+              <td colspan="2">紧密密度$\rho_{c}$(kg/$m^3$)</td>
+            </tr>
+            <tr>
+              <td>$\rho_{c}=[(m_{2}-m_{1})/V]*1000$</td>
+              <td style="width: 75px">平均值</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="tszl11" id="tszl11" /></td>
+              <td><input type="text" name="tzl11" id="tzl11" /></td>
+              <td><input type="text" name="trj11" id="trj11" /></td>
+              <td>
+                <input type="text" readonly name="jmmd11" id="jmmd11" />
+              </td>
+              <td rowspan="2">
+                <input
+                  type="text"
+                  readonly
+                  style="width: 50px"
+                  name="jmmdpjz"
+                  id="jmmdpjz"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="tszl12" id="tszl12" /></td>
+              <td><input type="text" name="tzl12" id="tzl12" /></td>
+              <td><input type="text" name="trj12" id="trj12" /></td>
+              <td>
+                <input type="text" readonly name="jmmd12" id="jmmd12" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">紧密孔隙率$v_{c}%$</td>
+              <td colspan="2" style="text-align: left">
+                $v_{c}=(1-\rho_{c}/\rho)*100=$
+              </td>
+              <td colspan="2">
+                <input type="text" readonly name="jmkxl" id="jmkxl" />
+              </td>
+            </tr>
+          </table>
+          <!-- 含泥（石粉含）量 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">（4）含泥（石粉含）量</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="width: 30px">次数</td>
+              <td rowspan="2">试验前烘干试样质量$m_{0}$(g)</td>
+              <td rowspan="2">试验后烘干试样质量$m_{1}$(g)</td>
+              <td colspan="2">含泥量$w_{c}$(%)</td>
+            </tr>
+            <tr>
+              <td>$w_{c}=[(m_{0}-m_{1})/m_{0}]*100$</td>
+              <td style="width: 75px">平均值</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="qhgzl01" id="qhgzl01" /></td>
+              <td><input type="text" name="hhgzl01" id="hhgzl01" /></td>
+              <td>
+                <input type="text" readonly name="hnl01" id="hnl01" />
+              </td>
+              <td rowspan="2">
+                <input
+                  type="text"
+                  readonly
+                  style="width: 50px"
+                  name="hnlpjz0"
+                  id="hnlpjz0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="qhgzl02" id="qhgzl02" /></td>
+              <td><input type="text" name="hhgzl02" id="hhgzl02" /></td>
+              <td>
+                <input type="text" readonly name="hnl02" id="hnl02" />
+              </td>
+            </tr>
+          </table>
+          <!-- 泥块含量 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">（5）泥块含量</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="width: 30px">次数</td>
+              <td rowspan="2">试验前烘干试样质量$m_{0}$(g)</td>
+              <td rowspan="2">试验后烘干试样质量$m_{1}$(g)</td>
+              <td colspan="2">含泥量$w_{c}$(%)</td>
+            </tr>
+            <tr>
+              <td>$w_{c+L}=[(m_{0}-m_{1})/m_{0}]*100$</td>
+              <td style="width: 75px">平均值</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="qhgzl11" id="qhgzl11" /></td>
+              <td><input type="text" name="hhgzl11" id="hhgzl11" /></td>
+              <td>
+                <input type="text" readonly name="hnl11" id="hnl11" />
+              </td>
+              <td rowspan="2">
+                <input
+                  type="text"
+                  readonly
+                  style="width: 50px"
+                  name="hnlpjz1"
+                  id="hnlpjz1"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="qhgzl12" id="qhgzl12" /></td>
+              <td><input type="text" name="hhgzl12" id="hhgzl12" /></td>
+              <td>
+                <input type="text" readonly name="hnl12" id="hnl12" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tableRemark"></div>
+      </div>
+    </form>
+  </body>
+  <script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('', '', function () {});
+
+    // 计算函数
+    // 计算表观密度
+    fixWhenBlur(['syzl', 'pssyzl', 'pszl', 'sysw', 'wdxzxs'], null, bgmd);
+    function bgmd() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let syzl = $('#syzl0' + i).val();
+        syzl = parseFloat(syzl);
+        let pssyzl = $('#pssyzl0' + i).val();
+        pssyzl = parseFloat(pssyzl);
+        let pszl = $('#pszl0' + i).val();
+        pszl = parseFloat(pszl);
+        let sysw = $('#sysw0' + i).val();
+        sysw = parseFloat(sysw);
+        let wdxzxs = $('#wdxzxs0' + i).val();
+        wdxzxs = parseFloat(wdxzxs);
+        let res = '';
+        if (validNum(syzl, pssyzl, pszl, sysw, wdxzxs)) {
+          res = (syzl / (syzl + pszl - pssyzl) - wdxzxs) * 1000;
+          res = res.toRound(1);
+        }
+        $('#bgmd0' + i).val(res);
+      }
+
+      // 计算表观密度平均值
+      avg = getAvgByRange('bgmd0', 1, 2);
+      avg = avg.toRound(1);
+      $('#bgmdpjz').val(avg);
+    }
+    // 计算堆积密度
+    fixWhenBlur(['tszl0', 'tzl0', 'trj0'], null, djmd);
+    function djmd() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let tszl = $('#tszl0' + i).val();
+        let tzl = $('#tzl0' + i).val();
+        let trj = $('#trj0' + i).val();
+        let res = '';
+        if (validNum(tszl, tzl, trj)) {
+          res = (tzl - tszl) / trj;
+          res = res.toRound(1);
+        }
+        $('#djmd0' + i).val(res);
+      }
+      // 计算堆积密度平均值
+      avg = getAvgByRange('djmd0', 1, 2);
+      avg = avg.toRound(1);
+      $('#djmdpjz').val(avg);
+      // 计算堆积空隙率
+      let djkxl = '';
+      let bgmdpjz = $('#bgmdpjz').val();
+      let djmdpjz = $('#djmdpjz').val();
+      if (validNum(bgmdpjz, djmdpjz)) {
+        djkxl = ((1 - djmdpjz) / bgmdpjz) * 100;
+        djkxl = djkxl.toRound(1);
+        $('#djkxl').val(djkxl);
+      }
+    }
+    // 计算紧密密度
+    fixWhenBlur(['tszl1', 'tzl1', 'trj1'], null, jmmd);
+    function jmmd() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let tszl = $('#tszl1' + i).val();
+        let tzl = $('#tzl1' + i).val();
+        let trj = $('#trj1' + i).val();
+        let res = '';
+        if (validNum(tszl, tzl, trj)) {
+          res = (tzl - tszl) / trj;
+          res = res.toRound(1);
+        }
+        $('#jmmd1' + i).val(res);
+      }
+      // 计算紧密密度平均值
+      avg = getAvgByRange('jmmd1', 1, 2);
+      avg = avg.toRound(1);
+      $('#jmmdpjz').val(avg);
+      // 计算紧密孔隙率
+      let jmkxl = '';
+      let bgmdpjz = $('#bgmdpjz').val();
+      let jmmdpjz = $('#jmmdpjz').val();
+      if (validNum(bgmdpjz, jmmdpjz)) {
+        jmkxl = ((1 - jmmdpjz) / bgmdpjz) * 100;
+        jmkxl = jmkxl.toRound(1);
+        $('#jmkxl').val(jmkxl);
+      }
+    }
+    // 计算含泥（石粉含）量
+    fixWhenBlur(['qhgzl0', 'hhgzl0'], null, hnl);
+    function hnl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let qhgzl = $('#qhgzl0' + i).val();
+        let hhgzl = $('#hhgzl0' + i).val();
+        let res = '';
+        if (validNum(qhgzl, hhgzl)) {
+          res = ((qhgzl - hhgzl) / qhgzl) * 100;
+          res = res.toRound(1);
+        }
+        $('#hnl0' + i).val(res);
+      }
+      // 计算含泥量平均值
+      avg = getAvgByRange('hnl0', 1, 2);
+      avg = avg.toRound(1);
+      $('#hnlpjz0').val(avg);
+    }
+    // 计算泥块含量
+    fixWhenBlur(['qhgzl1', 'hhgzl1'], null, nkhl);
+    function nkhl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let qhgzl = $('#qhgzl1' + i).val();
+        let hhgzl = $('#hhgzl1' + i).val();
+        let res = '';
+        if (validNum(qhgzl, hhgzl)) {
+          res = ((qhgzl - hhgzl) / qhgzl) * 100;
+          res = res.toRound(1);
+        }
+        $('#hnl1' + i).val(res);
+      }
+      // 计算泥块含量平均值
+      avg = getAvgByRange('hnl1', 1, 2);
+      avg = avg.toRound(1);
+      $('#hnlpjz1').val(avg);
+    }
+  </script>
+</html>

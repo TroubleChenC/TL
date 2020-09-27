@@ -1,0 +1,124 @@
+	body {
+		overflow-x: auto;
+		overflow-y: auto;
+	}
+
+	* {
+		font-family: '宋体';
+		font-weight: normal;
+	}
+
+	td {
+		font-size: 12px!important;
+		font-family: "宋体";
+		font-weight: normal;
+	}
+
+	input {
+		font-size: 12px;
+		font-family: "仿宋";
+		font-weight: normal;
+	}
+
+	.layui-table td {
+		text-align: center;
+	}
+
+	.paperA4 {
+		width: 267mm;
+		height: 180mm;
+		padding: 5mm 5mm 4.5mm 5mm;
+		margin: 50px auto;
+		background: #fff9ec;
+		page-break-after: always;
+	}
+
+	.titleWord {
+		font-size: 21px;
+		font-family: '宋体';
+		font-weight: normal;
+		text-align: center;
+		width: 880px;
+		height: 21px;
+		line-height: 21px;
+		margin: 15px auto;
+		margin-bottom: 5px;
+	}
+
+	textarea {
+		resize: none;
+		border: none;
+	}
+
+	input[type="text"] {
+		border-width: 0;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	.layui-table td,
+	.layui-table th,
+	.layui-table[lay-skin=line],
+	.layui-table[lay-skin=row] {
+		border-color: #000
+	}
+
+	.layui-table tbody tr:hover,
+	.layui-table[lay-even] tr:nth-child(even) {
+		background-color: transparent;
+	}
+
+	.layui-table,
+	.layui-table-view {
+		margin: 0;
+		color: #000;
+	}
+
+	.layui-table {
+		background: #FFF9EC;
+	}
+
+	.layui-table td,
+	.layui-table th {
+		padding: 2px;
+	}
+
+	.rightTop {
+		float: right;
+		position: relative;
+		right: 0px;
+		top: -20px;
+	}
+
+	.layui-table th {
+		text-align: center!important;
+	}
+
+	.tableContent tr td {
+		min-height: 40px;
+		line-height: 0px;
+	}
+
+	.tableContent th {
+		height: 40px;
+	}
+
+	.printBtn {
+		width: 100%;
+		position: fixed;
+		right: 5px;
+		top: 0;
+		background: #e8e8e86b;
+	}
+
+	@media print {
+		.paperA4 {
+			width: 267mm;
+			height: 180mm;
+			margin: 0px auto;
+		}
+		.noprint {
+			display: none;
+		}
+	}

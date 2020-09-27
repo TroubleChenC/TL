@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+        .table1 td {
+            height: 12px;
+        }
+
+        .table2 td {
+            height: 12px;
+        }
+
+        .table2 td {
+            height: 12px;
+        }
+
+        .table2 td {
+            height: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" action="" method="post" onsubmit="return false;">
+        <div class="paperA4 paperA4-vertical">
+            <div class="tableHeader">
+
+            </div>
+            <div class="tableContent">
+              <table class="layui-table">
+                <tr>
+                  <td>委托单位</td>
+                  <td><textarea name="wtdw" id="wtdw" autoheight></textarea></td>
+                  <td>委托编号</td>
+                  <td><textarea name="wtbh" id="wtbh" autoheight></textarea></td>
+                </tr>
+                <tr>
+                  <td>工程名称</td>
+                  <td><textarea name="gongchengmingcheng" id="gongchengmingcheng" autoheight></textarea></td>
+                  <td>记录编号</td>
+                  <td><textarea name="tableNumber" id="tableNumber" autoheight></textarea></td>
+                </tr>
+                <tr>
+                  <td>施工部位</td>
+                  <td><textarea name="sampleGcbw" id="sampleGcbw" autoheight></textarea></td>
+                  <td>样品编号</td>
+                  <td><textarea name="sampleNo" id="sampleNo" autoheight></textarea></td>
+                </tr>
+              </table>
+                <table class="layui-table table1">
+                    <tr>
+                        <td rowspan="6">仪器设备及环境条件</td>
+                        <td>仪器设备名称</td>
+                        <td>型号</td>
+                        <td>管理编号</td>
+                        <td>示值范围</td>
+                        <td>分辨力</td>
+                        <td>温度(&#8451;)</td>
+                        <td>相对湿度(%)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="yqsbmc1" id="yqsbmc1"></td>
+                        <td><input type="text" name="xh1" id="xh1"></td>
+                        <td><input type="text" name="glbh1" id="glbh1"></td>
+                        <td><input type="text" name="szfw1" id="szfw1"></td>
+                        <td><input type="text" name="fbl1" id="fbl1"></td>
+                        <td rowspan="5"><input type="text" name="wd" id="wd"></td>
+                        <td rowspan="5"><input type="text" name="xdsd" id="xdsd"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="yqsbmc2" id="yqsbmc2"></td>
+                        <td><input type="text" name="xh2" id="xh2"></td>
+                        <td><input type="text" name="glbh2" id="glbh2"></td>
+                        <td><input type="text" name="szfw2" id="szfw2"></td>
+                        <td><input type="text" name="fbl2" id="fbl2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="yqsbmc3" id="yqsbmc3"></td>
+                        <td><input type="text" name="xh3" id="xh3"></td>
+                        <td><input type="text" name="glbh3" id="glbh3"></td>
+                        <td><input type="text" name="szfw3" id="szfw3"></td>
+                        <td><input type="text" name="fbl3" id="fbl3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="yqsbmc4" id="yqsbmc4"></td>
+                        <td><input type="text" name="xh4" id="xh4"></td>
+                        <td><input type="text" name="glbh4" id="glbh4"></td>
+                        <td><input type="text" name="szfw4" id="szfw4"></td>
+                        <td><input type="text" name="fbl4" id="fbl4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="yqsbmc5" id="yqsbmc5"></td>
+                        <td><input type="text" name="xh5" id="xh5"></td>
+                        <td><input type="text" name="glbh5" id="glbh5"></td>
+                        <td><input type="text" name="szfw5" id="szfw5"></td>
+                        <td><input type="text" name="fbl5" id="fbl5"></td>
+                    </tr>
+                    <tr>
+                        <td>样品状态描述</td>
+                        <td><textarea autoheight></textarea></td>
+                        <td><textarea autoheight></textarea></td>
+                        <td><textarea autoheight></textarea></td>
+                        <td><textarea autoheight></textarea></td>
+                        <td>采用标准</td>
+                        <td colspan="2"><textarea autoheight></textarea></td>
+                    </tr>
+
+                </table>
+                <table class="next layui-table table2">
+                    <tr>
+                        <td colspan="17"><b>(1)轻骨料颗粒级配</b></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">样号</td>
+                        <td rowspan="2" style="width: 80px">筛孔尺寸(mm)</td>
+                        <td colspan="7">粗轻骨料</td>
+                        <td colspan="8">细轻骨料</td>
+                    </tr>
+                    <tr>
+                        <td>40.1</td>
+                        <td>31.5</td>
+                        <td>20.0</td>
+                        <td>16.0</td>
+                        <td>10.0</td>
+                        <td>5.0</td>
+                        <td>筛出</td>
+                        <td>10.0</td>
+                        <td>5.0</td>
+                        <td>2.50</td>
+                        <td>1.25</td>
+                        <td>0.630</td>
+                        <td>0.315</td>
+                        <td>0.160</td>
+                        <td>筛出</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><input type="text" name="yh1" id="yh1"></td>
+                        <td>筛余质量(g)</td>
+                        <td><input type="text" name="syzl1" id="syzl1"></td>
+                        <td><input type="text" name="syzl2" id="syzl2"></td>
+                        <td><input type="text" name="syzl3" id="syzl3"></td>
+                        <td><input type="text" name="syzl4" id="syzl4"></td>
+                        <td><input type="text" name="syzl5" id="syzl5"></td>
+                        <td><input type="text" name="syzl6" id="syzl6"></td>
+                        <td><input type="text" name="syzl7" id="syzl7"></td>
+                        <td><input type="text" name="syzl8" id="syzl8"></td>
+                        <td><input type="text" name="syzl9" id="syzl9"></td>
+                        <td><input type="text" name="syzl10" id="syzl10"></td>
+                        <td><input type="text" name="syzl11" id="syzl11"></td>
+                        <td><input type="text" name="syzl12" id="syzl12"></td>
+                        <td><input type="text" name="syzl13" id="syzl13"></td>
+                        <td><input type="text" name="syzl14" id="syzl14"></td>
+                        <td><input type="text" name="syzl15" id="syzl15"></td>
+                    </tr>
+                    <tr>
+                        <td>分计筛余(%)</td>
+                        <td><input type="text" name="fjsy1" id="fjsy1"></td>
+                        <td><input type="text" name="fjsy2" id="fjsy2"></td>
+                        <td><input type="text" name="fjsy3" id="fjsy3"></td>
+                        <td><input type="text" name="fjsy4" id="fjsy4"></td>
+                        <td><input type="text" name="fjsy5" id="fjsy5"></td>
+                        <td><input type="text" name="fjsy6" id="fjsy6"></td>
+                        <td><input type="text" name="fjsy7" id="fjsy7"></td>
+                        <td><input type="text" name="fjsy8" id="fjsy8"></td>
+                        <td><input type="text" name="fjsy9" id="fjsy9"></td>
+                        <td><input type="text" name="fjsy10" id="fjsy10"></td>
+                        <td><input type="text" name="fjsy11" id="fjsy11"></td>
+                        <td><input type="text" name="fjsy12" id="fjsy12"></td>
+                        <td><input type="text" name="fjsy13" id="fjsy13"></td>
+                        <td><input type="text" name="fjsy14" id="fjsy14"></td>
+                        <td><input type="text" name="fjsy15" id="fjsy15"></td>
+                    </tr>
+                    <tr>
+                        <td>累计筛余(%)</td>
+                        <td><input type="text" name="ljsy1" id="ljsy1"></td>
+                        <td><input type="text" name="ljsy2" id="ljsy2"></td>
+                        <td><input type="text" name="ljsy3" id="ljsy3"></td>
+                        <td><input type="text" name="ljsy4" id="ljsy4"></td>
+                        <td><input type="text" name="ljsy5" id="ljsy5"></td>
+                        <td><input type="text" name="ljsy6" id="ljsy6"></td>
+                        <td><input type="text" name="ljsy7" id="ljsy7"></td>
+                        <td><input type="text" name="ljsy8" id="ljsy8"></td>
+                        <td><input type="text" name="ljsy9" id="ljsy9"></td>
+                        <td><input type="text" name="ljsy10" id="ljsy10"></td>
+                        <td><input type="text" name="ljsy11" id="ljsy11"></td>
+                        <td><input type="text" name="ljsy12" id="ljsy12"></td>
+                        <td><input type="text" name="ljsy13" id="ljsy13"></td>
+                        <td><input type="text" name="ljsy14" id="ljsy14"></td>
+                        <td><input type="text" name="ljsy15" id="ljsy15"></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><input type="text" name="yh2" id="yh2"></td>
+                        <td>筛余质量(g)</td>
+                        <td><input type="text" name="2syzl1" id="2syzl1"></td>
+                        <td><input type="text" name="2syzl2" id="2syzl2"></td>
+                        <td><input type="text" name="2syzl3" id="2syzl3"></td>
+                        <td><input type="text" name="2syzl4" id="2syzl4"></td>
+                        <td><input type="text" name="2syzl5" id="2syzl5"></td>
+                        <td><input type="text" name="2syzl6" id="2syzl6"></td>
+                        <td><input type="text" name="2syzl7" id="2syzl7"></td>
+                        <td><input type="text" name="2syzl8" id="2syzl8"></td>
+                        <td><input type="text" name="2syzl9" id="2syzl9"></td>
+                        <td><input type="text" name="2syzl10" id="2syzl10"></td>
+                        <td><input type="text" name="2syzl11" id="2syzl11"></td>
+                        <td><input type="text" name="2syzl12" id="2syzl12"></td>
+                        <td><input type="text" name="2syzl13" id="2syzl13"></td>
+                        <td><input type="text" name="2syzl14" id="2syzl14"></td>
+                        <td><input type="text" name="2syzl15" id="2syzl15"></td>
+                    </tr>
+                    <tr>
+                        <td>分计筛余(%)</td>
+                        <td><input type="text" name="2fjsy1" id="2fjsy1"></td>
+                        <td><input type="text" name="2fjsy2" id="2fjsy2"></td>
+                        <td><input type="text" name="2fjsy3" id="2fjsy3"></td>
+                        <td><input type="text" name="2fjsy4" id="2fjsy4"></td>
+                        <td><input type="text" name="2fjsy5" id="2fjsy5"></td>
+                        <td><input type="text" name="2fjsy6" id="2fjsy6"></td>
+                        <td><input type="text" name="2fjsy7" id="2fjsy7"></td>
+                        <td><input type="text" name="2fjsy8" id="2fjsy8"></td>
+                        <td><input type="text" name="2fjsy9" id="2fjsy9"></td>
+                        <td><input type="text" name="2fjsy10" id="2fjsy10"></td>
+                        <td><input type="text" name="2fjsy11" id="2fjsy11"></td>
+                        <td><input type="text" name="2fjsy12" id="2fjsy12"></td>
+                        <td><input type="text" name="2fjsy13" id="2fjsy13"></td>
+                        <td><input type="text" name="2fjsy14" id="2fjsy14"></td>
+                        <td><input type="text" name="2fjsy15" id="2fjsy15"></td>
+                    </tr>
+                    <tr>
+                        <td>累计筛余(%)</td>
+                        <td><input type="text" name="2ljsy1" id="2ljsy1"></td>
+                        <td><input type="text" name="2ljsy2" id="2ljsy2"></td>
+                        <td><input type="text" name="2ljsy3" id="2ljsy3"></td>
+                        <td><input type="text" name="2ljsy4" id="2ljsy4"></td>
+                        <td><input type="text" name="2ljsy5" id="2ljsy5"></td>
+                        <td><input type="text" name="2ljsy6" id="2ljsy6"></td>
+                        <td><input type="text" name="2ljsy7" id="2ljsy7"></td>
+                        <td><input type="text" name="2ljsy8" id="2ljsy8"></td>
+                        <td><input type="text" name="2ljsy9" id="2ljsy9"></td>
+                        <td><input type="text" name="2ljsy10" id="2ljsy10"></td>
+                        <td><input type="text" name="2ljsy11" id="2ljsy11"></td>
+                        <td><input type="text" name="2ljsy12" id="2ljsy12"></td>
+                        <td><input type="text" name="2ljsy13" id="2ljsy13"></td>
+                        <td><input type="text" name="2ljsy14" id="2ljsy14"></td>
+                        <td><input type="text" name="2ljsy15" id="2ljsy15"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">平均累计筛余(%)</td>
+                        <td><input type="text" name="pjljsy1" id="pjljsy1"></td>
+                        <td><input type="text" name="pjljsy2" id="pjljsy2"></td>
+                        <td><input type="text" name="pjljsy3" id="pjljsy3"></td>
+                        <td><input type="text" name="pjljsy4" id="pjljsy4"></td>
+                        <td><input type="text" name="pjljsy5" id="pjljsy5"></td>
+                        <td><input type="text" name="pjljsy6" id="pjljsy6"></td>
+                        <td><input type="text" name="pjljsy7" id="pjljsy7"></td>
+                        <td><input type="text" name="pjljsy8" id="pjljsy8"></td>
+                        <td><input type="text" name="pjljsy9" id="pjljsy9"></td>
+                        <td><input type="text" name="pjljsy10" id="pjljsy10"></td>
+                        <td><input type="text" name="pjljsy11" id="pjljsy11"></td>
+                        <td><input type="text" name="pjljsy12" id="pjljsy12"></td>
+                        <td><input type="text" name="pjljsy13" id="pjljsy13"></td>
+                        <td><input type="text" name="pjljsy14" id="pjljsy14"></td>
+                        <td><input type="text" name="pjljsy15" id="pjljsy15"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2">试验结果</td>
+                        <td colspan="3">原试样质量(g)</td>
+                        <td colspan="4"><input type="text" name="yslzl1" id="yslzl1"></td>
+                        <td colspan="4">原试样质量(g)</td>
+                        <td colspan="4"><input type="text" name="yslzl1" id="yslzl1"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">最大粒径(mm)</td>
+                        <td colspan="4"><input type="text" name="zdkl" id="zdkl"></td>
+                        <td colspan="4">细度模数$M_{x}$</td>
+                        <td colspan="4"><input type="text" name="xdms" id="xdms"></td>
+                    </tr>
+                </table>
+                <table class="next layui-table table3">
+                    <tr>
+                        <td colspan="10"><b>(2)轻骨料堆积密度</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">粗轻骨料</td>
+                        <td colspan="5">细轻骨料</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">试样与筒质量m(kg)</td>
+                        <td rowspan="2">量筒质量$m_{1}$(kg)</td>
+                        <td rowspan="2">量容积V(L)</td>
+                        <td colspan="2">堆积密度&#961;(kg/$m^3$)<br />&#961;=[(m-$m_{1}$)/V×1000]</td>
+                        <td rowspan="2">试样与筒质量m(kg)</td>
+                        <td rowspan="2">量筒质量$m_{1}$(kg)</td>
+                        <td rowspan="2">量容积V(L)</td>
+                        <td colspan="2">堆积密度&#961;(kg/$m^3$)<br />&#961;=[(m-$m_{1}$)/V×1000]</td>
+                    </tr>
+                    <tr>
+                        <td>单值</td>
+                        <td>平均值</td>
+                        <td>单值</td>
+                        <td>平均值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="c_syytzl1" id="c_syytzl1"></td>
+                        <td><input type="text" name="c_ltzl1" id="c_ltzl1"></td>
+                        <td><input type="text" name="c_lrj1" id="c_lrj1"></td>
+                        <td><input type="text" name="c_dz1" id="c_dz1"></td>
+                        <td rowspan="2"><input type="text" name="c_pjz1" id="c_pjz1"></td>
+                        <td><input type="text" name="x_syytzl1" id="x_syytzl1"></td>
+                        <td><input type="text" name="x_ltzl1" id="x_ltzl1"></td>
+                        <td><input type="text" name="x_lrj1" id="x_lrj1"></td>
+                        <td><input type="text" name="x_dz1" id="x_dz1"></td>
+                        <td rowspan="2"><input type="text" name="x_pjz1" id="x_pjz1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="c_syytzl2" id="c_syytzl2"></td>
+                        <td><input type="text" name="c_ltzl2" id="c_ltzl2"></td>
+                        <td><input type="text" name="c_lrj2" id="c_lrj2"></td>
+                        <td><input type="text" name="c_dz2" id="c_dz2"></td>
+                        <td><input type="text" name="x_syytzl2" id="x_syytzl2"></td>
+                        <td><input type="text" name="x_ltzl2" id="x_ltzl2"></td>
+                        <td><input type="text" name="x_lrj2" id="x_lrj2"></td>
+                        <td><input type="text" name="x_dz2" id="x_dz2"></td>
+                    </tr>
+                </table>
+                <table class="next layui-table table4">
+                    <tr>
+                        <td colspan="6">(3)轻粗骨料表观密度与空隙率</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">烘干试样质量m(g)</td>
+                        <td rowspan="2">圆形金属板的体积$V_{1}(mL)$</td>
+                        <td colspan="2" rowspan="2">倒入试样和放入压板后量筒中水的体积水位V(mL)</td>
+                        <td colspan="2">表观密度&#961;(kg/$m^3$)<br />$&#961;_{ap}$[(m×100)/(V-$V_{1}$-500)</td>
+                    </tr>
+                    <tr>
+                        <td>单值</td>
+                        <td>平均值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hgsyzl1" id="hgsyzl1"></td>
+                        <td><input type="text" name="yxjsbtj1" id="yxjsbtj1"></td>
+                        <td><input type="text" name="drsytjsw1" id="drsytjsw1"></td>
+                        <td><input type="text" name="frybtjsw1" id="frybtjsw1"></td>
+                        <td><input type="text" name="bgmddz1" id="bgmddz1"></td>
+                        <td rowspan="2"><input type="text" name="bgmdpjz1" id="bgmdpjz1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hgsyzl2" id="hgsyzl2"></td>
+                        <td><input type="text" name="yxjsbtj2" id="yxjsbtj2"></td>
+                        <td><input type="text" name="drsytjsw2" id="drsytjsw2"></td>
+                        <td><input type="text" name="frybtjsw2" id="frybtjsw2"></td>
+                        <td><input type="text" name="bgmddz2" id="bgmddz2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">轻粗骨料空隙率&#965;(%)</td>
+                        <td colspan="4">&#965;=(1-&#961;/$&#961;_{ap}$)×100=</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tableRemark"></div>
+        </div>
+    </form>
+</body>
+<script>
+    // base.remarkType = '1';  记录0  报告1
+    base.remarkType = '0';
+    initTable('004-head', 'tail', function () {
+        $('#tiTableName').text('轻骨料试验记录（—）');
+    });
+    // 堆积密度(粗轻骨料)
+    fixWhenBlur(['c_syytzl', 'c_ltzl', 'c_lrj'], null, djmd1)
+    function djmd1() {
+        for (let i = 1; i <= 2; i++) {
+            // 平均值计算
+            let a1 = $('#c_syytzl' + i).val();
+            let a2 = $('#c_ltzl' + i).val();
+            let a3 = $('#c_lrj' + i).val();
+            if (validNum(a1, a2, a3)) {
+                let m1 = (parseFloat(a1) - parseFloat(a2)) / parseFloat(a3) * 1000
+                $('#c_dz' + i).val(m1.toRound(1))
+                console.log("aaa");
+
+            }
+        }
+        //平均值计算
+        $('#c_pjz1').val(getAvgById(['c_dz1', 'c_dz2']).toRound(2))
+    }
+    // 堆积密度(细轻骨料)
+    fixWhenBlur(['x_syytzl', 'x_ltzl', 'x_lrj'], null, djmd2);
+    function djmd2() {
+        for (let i = 1; i <= 2; i++) {
+            // 平均值计算
+            let s1 = $('#x_syytzl' + i).val();
+            let s2 = $('#x_ltzl' + i).val();
+            let s3 = $('#x_lrj' + i).val();
+            if (validNum(s1, s2, s3)) {
+                let m2 = (parseFloat(s1) - parseFloat(s2)) / parseFloat(s3) * 1000;
+                $('#x_dz' + i).val(m2.toRound(1))
+            }
+        }
+        //平均值计算
+        $('#x_pjz1').val(getAvgById(['x_dz1', 'x_dz2']).toRound(2))
+    }
+</script>
+
+</html>

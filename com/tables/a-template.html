@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent"></div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  initTable('', '', function () {
+  });
+</script>
+</html>

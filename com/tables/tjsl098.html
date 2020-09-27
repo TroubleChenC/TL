@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link
+    rel="stylesheet"
+    href="../../plugins/layui/css/layui.css"
+    media="all"
+  />
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+      }});
+
+
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+    .tableContent td {
+      min-height: 10px;
+      line-height: 15px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 钢筋焊接接头试验记录 -->
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <table class="layui-table">
+          <tr>
+            <td rowspan="4" style="width: 100px">
+              仪器设备<br/>及<br/>环境条件
+            </td>
+            <td style="width: 120px">仪器设备名称</td>
+            <td>型号</td>
+            <td>管理编号</td>
+            <td>示值范围</td>
+            <td>分辨力</td>
+            <td>温度（℃）</td>
+            <td>相对湿度（%）</td>
+          </tr>
+          <tr>
+            <td>
+                <textarea
+                  type="text"
+                  name="sbmc1"
+                  id="sbmc1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+              <textarea type="text" name="xh1" id="xh1" autoheight></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="glbh1"
+                  id="glbh1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="szfw1"
+                  id="szfw1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="fbl1"
+                  id="fbl1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td rowspan="3"><input type="text" name="wd" id="wd"/></td>
+            <td rowspan="3"><input type="text" name="xdsd" id="xdsd"/></td>
+          </tr>
+          <tr>
+            <td>
+                <textarea
+                  type="text"
+                  name="sbmc2"
+                  id="sbmc2"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+              <textarea type="text" name="xh2" id="xh2" autoheight></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="glbh2"
+                  id="glbh2"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="szfw2"
+                  id="szfw2"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="fbl2"
+                  id="fbl2"
+                  autoheight
+                ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <textarea
+                  type="text"
+                  name="sbmc3"
+                  id="sbmc3"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+              <textarea type="text" name="xh3" id="xh3" autoheight></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="glbh3"
+                  id="glbh3"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="szfw3"
+                  id="szfw3"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="fbl3"
+                  id="fbl3"
+                  autoheight
+                ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>样品状态描述</td>
+            <td colspan="2">
+                <textarea
+                  type="text"
+                  name="ypztms"
+                  id="ypztms"
+                  autoheight
+                ></textarea>
+            </td>
+            <td colspan="2">采用标准</td>
+            <td colspan="3">
+                <textarea
+                  type="text"
+                  name="cybz"
+                  id="cybz"
+                  autoheight
+                ></textarea>
+            </td>
+          </tr>
+        </table>
+        <table class="layui-table next">
+          <tr>
+            <td colspan="2" rowspan="2" style="width: 400px">
+              项&nbsp;&nbsp;&nbsp;目
+            </td>
+            <td colspan="6">试件编号</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="sjbh1" id="sjbh1"/></td>
+            <td><input type="text" name="sjbh2" id="sjbh2"/></td>
+            <td><input type="text" name="sjbh3" id="sjbh3"/></td>
+            <td><input type="text" name="sjbh4" id="sjbh4"/></td>
+            <td><input type="text" name="sjbh5" id="sjbh5"/></td>
+            <td><input type="text" name="sjbh6" id="sjbh6"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">取样部位</td>
+            <td colspan="3"><input type="text" name="qybw1" id="qybw1"/></td>
+            <td colspan="3"><input type="text" name="qybw2" id="qybw2"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">焊接种类</td>
+            <td colspan="3"><input type="text" name="hjzl1" id="hjzl1"/></td>
+            <td colspan="3"><input type="text" name="hjzl2" id="hjzl2"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">焊接长度$L_{h}$(mm)</td>
+            <td><input type="text" name="hjcd1" id="hjcd1"/></td>
+            <td><input type="text" name="hjcd2" id="hjcd2"/></td>
+            <td><input type="text" name="hjcd3" id="hjcd3"/></td>
+            <td><input type="text" name="hjcd4" id="hjcd4"/></td>
+            <td><input type="text" name="hjcd5" id="hjcd5"/></td>
+            <td><input type="text" name="hjcd6" id="hjcd6"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">焊工姓名及上岗证编号</td>
+            <td colspan="3">
+              <input type="text" name="hgxmbh1" id="hgxmbh1"/>
+            </td>
+            <td colspan="3">
+              <input type="text" name="hgxmbh2" id="hgxmbh2"/>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="6" style="width: 60px">
+              拉<br/>伸<br/>试<br/>验
+            </td>
+            <td>公称直径a(mm)</td>
+            <td colspan="3"><input type="text" name="gczj1" id="gczj1"/></td>
+            <td colspan="3"><input type="text" name="gczj2" id="gczj2"/></td>
+          </tr>
+          <tr>
+            <td>公称截面面积$S_{0}$($mm^2$)</td>
+            <td colspan="3">
+              <input type="text" name="gcjmj1" id="gcjmj1" readonly/>
+            </td>
+            <td colspan="3">
+              <input type="text" name="gcjmj2" id="gcjmj2" readonly/>
+            </td>
+          </tr>
+          <tr>
+            <td>拉断最大力$F_{b}$(kN)</td>
+            <td><input type="text" name="ldzdl1" id="ldzdl1"/></td>
+            <td><input type="text" name="ldzdl2" id="ldzdl2"/></td>
+            <td><input type="text" name="ldzdl3" id="ldzdl3"/></td>
+            <td><input type="text" name="ldzdl4" id="ldzdl4"/></td>
+            <td><input type="text" name="ldzdl5" id="ldzdl5"/></td>
+            <td><input type="text" name="ldzdl6" id="ldzdl6"/></td>
+          </tr>
+          <tr>
+            <td>抗拉强度$\sigma_{b}(MPa)$</td>
+            <td><input type="text" name="klqd1" id="klqd1" readonly/></td>
+            <td><input type="text" name="klqd2" id="klqd2" readonly/></td>
+            <td><input type="text" name="klqd3" id="klqd3" readonly/></td>
+            <td><input type="text" name="klqd4" id="klqd4" readonly/></td>
+            <td><input type="text" name="klqd5" id="klqd5" readonly/></td>
+            <td><input type="text" name="klqd6" id="klqd6" readonly/></td>
+          </tr>
+          <tr>
+            <td>拉断处位置描述(距焊缝mm)</td>
+            <td><input type="text" name="ldcwzms1" id="ldcwzms1"/></td>
+            <td><input type="text" name="ldcwzms2" id="ldcwzms2"/></td>
+            <td><input type="text" name="ldcwzms3" id="ldcwzms3"/></td>
+            <td><input type="text" name="ldcwzms4" id="ldcwzms4"/></td>
+            <td><input type="text" name="ldcwzms5" id="ldcwzms5"/></td>
+            <td><input type="text" name="ldcwzms6" id="ldcwzms6"/></td>
+          </tr>
+          <tr>
+            <td>断口特征描述</td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms1"
+                  id="dktzms1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms2"
+                  id="dktzms2"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms3"
+                  id="dktzms3"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms4"
+                  id="dktzms4"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms5"
+                  id="dktzms5"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="dktzms6"
+                  id="dktzms6"
+                  autoheight
+                ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="4">弯<br/>曲<br/>试<br/>验</td>
+            <td>弯曲角度$a$(°)</td>
+            <td colspan="3"><input type="text" name="wqjd1" id="wqjd1"/></td>
+            <td colspan="3"><input type="text" name="wqjd2" id="wqjd2"/></td>
+          </tr>
+          <tr>
+            <td>弯心直径</td>
+            <td colspan="3"><input type="text" name="wxzj1" id="wxzj1"/></td>
+            <td colspan="3"><input type="text" name="wxzj2" id="wxzj2"/></td>
+          </tr>
+          <tr>
+            <td>弯曲外表面描述</td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms1"
+                  id="wqwbmms1"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms2"
+                  id="wqwbmms2"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms3"
+                  id="wqwbmms3"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms4"
+                  id="wqwbmms4"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms5"
+                  id="wqwbmms5"
+                  autoheight
+                ></textarea>
+            </td>
+            <td>
+                <textarea
+                  type="text"
+                  name="wqwbmms6"
+                  id="wqwbmms6"
+                  autoheight
+                ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>弯曲结果</td>
+            <td colspan="3"><input type="text" name="wqjg1" id="wqjg1"/></td>
+            <td colspan="3"><input type="text" name="wqjg2" id="wqjg2"/></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  // base.remarkType = '1';  记录0  报告1
+  initTable('', '', function () {
+  });
+  // 计算函数
+  // 计算钢筋截面积
+  fixWhenBlur(['gczj'], null, jsgcjmj);
+
+  function jsgcjmj() {
+    for (let i = 0; i <= 2; i++) {
+      let gczj = $('#gczj' + i).val();
+      let res = '';
+      if (validNum(gczj)) {
+        res = (PI * gczj * gczj) / 4;
+        res = res.toRound(1);
+      }
+
+      $('#gcjmj' + i).val(res);
+    }
+  }
+
+  // 计算钢筋抗拉强度
+  fixWhenBlur(['ldzdl', 'gczj'], null, jsklqd);
+
+  function jsklqd() {
+    for (var i = 1; i <= 6; i++) {
+      let ldzdl = $('#ldzdl' + i).val();
+      if (i <= 3) {
+        var gcjmj = $('#gcjmj1').val();
+      } else {
+        var gcjmj = $('#gcjmj2').val();
+      }
+      let res = '';
+
+      if (validNum(ldzdl, gcjmj)) {
+        // 强度(MPa) = [最大承受力（n）/公称截面积（mm*mm）]*1000
+        res = (ldzdl / gcjmj) * 1000;
+        res = res.toRound(1);
+      }
+      $('#klqd' + i).val(res);
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="../../plugins/layui/css/layui.css"
+      media="all"
+    />
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+      }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+      .tableContent td {
+        min-height: 10px;
+        line-height: 15px;
+        height: 32px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 细骨料试验记录（三） -->
+    <form id="form" action="" method="post" onsubmit="return false;">
+      <div class="paperA4 paperA4-vertical">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+          <table class="layui-table">
+            <tr>
+              <!-- 坚固性指标 -->
+            </tr>
+
+            <tr>
+              <td colspan="6">(10)坚固性指标</td>
+            </tr>
+            <tr>
+              <td style="width: 75px">试样公称粒径(mm)</td>
+              <td>试验前试样干质量$m_{i}$(g)</td>
+              <td>试验后试样干质量$m_{i}'$(g)</td>
+              <td style="width: 110px">
+                各粒级试样占试样总质量百分率$a_{i}$(%) <br />
+                $a_i=(m_{i}/\sum^4_{i=1}m_{i})*100$
+              </td>
+              <td style="width: 110px">
+                各粒级质量损失百分率$\delta_{ji}$(%) <br />
+                $\delta_{ji}=\frac{m_{i}-m_{i}'}{m_{i}}*100$
+              </td>
+              <td style="width: 204px">
+                总质量损失率$\delta_{j}$(%) <br /><br />
+                $\delta_{j}=\frac{a_{1}\delta_{j1}+a_{2}\delta_{j2}+a_{3}\delta_{j3}+a_{4}\delta_{j4}}{a_{1}+a_{2}+a_{3}+a_{4}}$
+              </td>
+            </tr>
+            <tr>
+              <td>0.315~0.630</td>
+              <td><input type="text" name="qsygzl1" id="qsygzl1" /></td>
+              <td><input type="text" name="hsygzl1" id="hsygzl1" /></td>
+              <td>
+                <input type="text" readonly name="gljzbfl1" id="gljzbfl1" />
+              </td>
+              <td>
+                <input type="text" readonly name="gljssbfl1" id="gljssbfl1" />
+              </td>
+              <td><input type="text" readonly name="zssl1" id="zssl1" /></td>
+            </tr>
+            <tr>
+              <td>0.630~1.25</td>
+              <td><input type="text" name="qsygzl2" id="qsygzl2" /></td>
+              <td><input type="text" name="hsygzl2" id="hsygzl2" /></td>
+              <td>
+                <input type="text" readonly name="gljzbfl2" id="gljzbfl2" />
+              </td>
+              <td>
+                <input type="text" readonly name="gljssbfl2" id="gljssbfl2" />
+              </td>
+              <td><input type="text" readonly name="zssl2" id="zssl2" /></td>
+            </tr>
+            <tr>
+              <td>1.25~2.50</td>
+              <td><input type="text" name="qsygzl3" id="qsygzl3" /></td>
+              <td><input type="text" name="hsygzl3" id="hsygzl3" /></td>
+              <td>
+                <input type="text" readonly name="gljzbfl3" id="gljzbfl3" />
+              </td>
+              <td>
+                <input type="text" readonly name="gljssbfl3" id="gljssbfl3" />
+              </td>
+              <td><input type="text" readonly name="zssl3" id="zssl3" /></td>
+            </tr>
+            <tr>
+              <td>2.50~5.00</td>
+              <td><input type="text" name="qsygzl4" id="qsygzl4" /></td>
+              <td><input type="text" name="hsygzl4" id="hsygzl4" /></td>
+              <td>
+                <input type="text" readonly name="gljzbfl4" id="gljzbfl4" />
+              </td>
+              <td>
+                <input type="text" readonly name="gljssbfl4" id="gljssbfl4" />
+              </td>
+              <td><input type="text" readonly name="zssl4" id="zssl4" /></td>
+            </tr>
+          </table>
+          <!-- 压碎指标值 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="9">(11)压碎指标值</td>
+            </tr>
+            <tr>
+              <td rowspan="2">试样 <br />公称<br />粒级<br />(mm)</td>
+              <td rowspan="2" style="width: 25px">次数</td>
+              <td rowspan="2" style="width: 70px">
+                第i次单级试样的质量$m_{0}$(g)
+              </td>
+              <td rowspan="2" style="width: 70px">
+                第i次单级试样的压碎试验后筛余的试样质量$m_{1}$(g)
+              </td>
+              <td colspan="2" style="width: 80px">
+                第i单级试样分计筛余$a_{i}$(%)
+              </td>
+              <td colspan="2">
+                第i单级试样压碎指标$\delta_{i}$(%) <br /><br />
+                $\delta_{i}=\frac{m_{0}-m_{1}}{m_{0}}*100$
+              </td>
+              <td rowspan="2">
+                总的压碎指标$\delta_{sa}$(%) <br /><br />
+                $\delta_{sa}=\frac{a_{1}\delta_{1}+a_{2}\delta_{2}+a_{3}\delta_{3}+a_{4}\delta_{4}}{a_{1}+a_{2}+a_{3}+a_{4}}*100$
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 35px; height: 40px">单值</td>
+              <td style="width: 35px; height: 40px">均值</td>
+              <td>单值</td>
+              <td>平均值</td>
+            </tr>
+            <tr>
+              <td rowspan="3">0.315~0.630</td>
+              <td>1</td>
+              <td><input type="text" name="djsyzl11" id="djsyzl11" /></td>
+              <td><input type="text" name="sysyzl11" id="sysyzl11" /></td>
+              <td>
+                <input type="text" name="fjsydz11" id="fjsydz11" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="fjsyjz1" id="fjsyjz1" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz11" id="yszbdz11" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="yszbjz1" id="yszbjz1" readonly />
+              </td>
+              <td rowspan="13">
+                <input type="text" name="zyszb" id="zyszb" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="djsyzl12" id="djsyzl12" /></td>
+              <td><input type="text" name="sysyzl12" id="sysyzl12" /></td>
+              <td>
+                <input type="text" name="fjsydz12" id="fjsydz12" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz12" id="yszbdz12" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" name="djsyzl13" id="djsyzl13" /></td>
+              <td><input type="text" name="sysyzl13" id="sysyzl13" /></td>
+              <td>
+                <input type="text" name="fjsydz13" id="fjsydz13" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz13" id="yszbdz13" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="3">0.630~1.25</td>
+              <td>1</td>
+              <td><input type="text" name="djsyzl21" id="djsyzl21" /></td>
+              <td><input type="text" name="sysyzl21" id="sysyzl21" /></td>
+              <td>
+                <input type="text" name="fjsydz21" id="fjsydz21" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="fjsyjz2" id="fjsyjz2" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz21" id="yszbdz21" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="yszbjz2" id="yszbjz2" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="djsyzl22" id="djsyzl22" /></td>
+              <td><input type="text" name="sysyzl22" id="sysyzl22" /></td>
+              <td>
+                <input type="text" name="fjsydz22" id="fjsydz22" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz22" id="yszbdz22" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" name="djsyzl23" id="djsyzl23" /></td>
+              <td><input type="text" name="sysyzl23" id="sysyzl23" /></td>
+              <td>
+                <input type="text" name="fjsydz23" id="fjsydz23" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz23" id="yszbdz23" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="3">1.25~2.50</td>
+              <td>1</td>
+              <td><input type="text" name="djsyzl31" id="djsyzl31" /></td>
+              <td><input type="text" name="sysyzl31" id="sysyzl31" /></td>
+              <td>
+                <input type="text" name="fjsydz31" id="fjsydz31" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="fjsyjz3" id="fjsyjz3" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz31" id="yszbdz31" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="yszbjz3" id="yszbjz3" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="djsyzl32" id="djsyzl32" /></td>
+              <td><input type="text" name="sysyzl32" id="sysyzl32" /></td>
+              <td>
+                <input type="text" name="fjsydz32" id="fjsydz32" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz32" id="yszbdz32" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" name="djsyzl33" id="djsyzl33" /></td>
+              <td><input type="text" name="sysyzl33" id="sysyzl33" /></td>
+              <td>
+                <input type="text" name="fjsydz33" id="fjsydz33" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz33" id="yszbdz33" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="3">2.50~5.00</td>
+              <td>1</td>
+              <td><input type="text" name="djsyzl41" id="djsyzl41" /></td>
+              <td><input type="text" name="sysyzl41" id="sysyzl41" /></td>
+              <td>
+                <input type="text" name="fjsydz41" id="fjsydz41" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="fjsyjz4" id="fjsyjz4" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz41" id="yszbdz41" readonly />
+              </td>
+              <td rowspan="3">
+                <input type="text" name="yszbjz4" id="yszbjz4" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" name="djsyzl42" id="djsyzl42" /></td>
+              <td><input type="text" name="sysyzl42" id="sysyzl42" /></td>
+              <td>
+                <input type="text" name="fjsydz42" id="fjsydz42" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz42" id="yszbdz42" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" name="djsyzl43" id="djsyzl43" /></td>
+              <td><input type="text" name="sysyzl43" id="sysyzl43" /></td>
+              <td>
+                <input type="text" name="fjsydz43" id="fjsydz43" readonly />
+              </td>
+              <td>
+                <input type="text" name="yszbdz43" id="yszbdz43" readonly />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tableRemark"></div>
+      </div>
+    </form>
+  </body>
+  <script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('', '', function () {});
+    // 计算函数
+    // 各粒级试样占试样总质量百分率
+    fixWhenBlur(['qsygzl'], null, zzlbfl);
+    function zzlbfl() {
+      let sum = 0;
+      for (var i = 1; i <= 4; i++) {
+        let qsygzl = $('#qsygzl' + i).val();
+        qsygzl = parseFloat(qsygzl);
+        sum += qsygzl;
+      }
+      for (var j = 0; j <= 4; j++) {
+        qsygzl = $('#qsygzl' + j).val();
+        let res = '';
+        if (validNum(sum, qsygzl)) {
+          res = qsygzl / sum;
+          res = res.toRound(1);
+        }
+        $('#gljzbfl' + j).val(res);
+      }
+    }
+    // 各粒级质量损失百分率,总质量损失率
+    fixWhenBlur(['hsygzl', 'qsygzl'], null, ssbfl);
+    function ssbfl() {
+      let fz = 0;
+      let fm = 0;
+      let res1 = '';
+      for (var i = 1; i <= 4; i++) {
+        let qsygzl = $('#qsygzl' + i).val();
+        let hsygzl = $('#hsygzl' + i).val();
+        let res = '';
+
+        let gljzbfl = $('#gljzbfl' + i).val();
+        gljzbfl = parseFloat(gljzbfl);
+        let gljssbfl = $('#gljssbfl' + i).val();
+        gljssbfl = parseFloat(gljssbfl);
+        fz += gljzbfl * gljssbfl;
+        fm += gljzbfl;
+
+        if (validNum(qsygzl, hsygzl)) {
+          res = ((qsygzl - hsygzl) / qsygzl) * 100;
+          res = res.toRound(1);
+        }
+
+        $('#gljssbfl' + i).val(res);
+      }
+      if (validNum(fz, fm) && fm != 0) {
+        res1 = fz / fm;
+        res1 = res1.toRound(1);
+      }
+
+      $('#zssl1').val(res1);
+      $('#zssl2').val(res1);
+      $('#zssl3').val(res1);
+      $('#zssl4').val(res1);
+    }
+    //计算压碎指标值
+    fixWhenBlur(['djsyzl', 'sysyzl'], null, yszbz);
+    function yszbz() {
+      let fz = 0;
+      let fm = 0;
+      let res = '';
+      for (var i = 1; i <= 4; i++) {
+        let fjsyjz = 0;
+        let yszbjz = 0;
+        for (var j = 1; j <= 3; j++) {
+          let djsyzl = $('#djsyzl' + i + j).val();
+          let sysyzl = $('#sysyzl' + i + j).val();
+          let fjsy = '';
+          let yszb = '';
+          if (validNum(djsyzl, sysyzl)) {
+            // 计算第i单级试样分计筛余单值
+            fjsy = sysyzl / djsyzl;
+            fjsy = fjsy.toRound(1);
+            fjsyjz += parseFloat(fjsy);
+            // 计算第i单级试样压碎指标单值
+            yszb = ((djsyzl - sysyzl) / djsyzl) * 100;
+            yszb = yszb.toRound(1);
+            yszbjz += parseFloat(yszb);
+          }
+          $('#fjsydz' + i + j).val(fjsy);
+          $('#yszbdz' + i + j).val(yszb);
+        }
+
+        if (validNum(fjsyjz)) {
+          // 计算第i单级试样分计筛余均值
+          fjsyjz = fjsyjz / 3;
+          fjsyjz = fjsyjz.toRound(1);
+        }
+        if (validNum(yszbjz)) {
+          // 计算第i单级试样压碎指标均值
+          yszbjz = yszbjz / 3;
+          yszbjz = yszbjz.toRound(1);
+        }
+        if (fjsyjz == 0) {
+          fjsyjz = '';
+        }
+        if (yszbjz == 0) {
+          yszbjz = '';
+        }
+
+        $('#fjsyjz' + i).val(fjsyjz);
+        $('#yszbjz' + i).val(yszbjz);
+
+        // 计算总的压碎指标
+        fjsyjz = parseFloat(fjsyjz);
+        yszbjz = parseFloat(yszbjz);
+        if (validNum(fjsyjz, yszbjz)) {
+          fz += fjsyjz * yszbjz;
+          fm += fjsyjz;
+        }
+        if (validNum(fz, fm) && fm != 0) {
+          res = fz / fm;
+          res = res.toRound(1);
+        }
+        $('#zyszb').val(res);
+      }
+    }
+  </script>
+</html>

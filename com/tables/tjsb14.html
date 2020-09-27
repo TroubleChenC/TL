@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+
+
+
+
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <table class="layui-table">
+          <tr>
+            <td colspan="4">(1)技术条件</td>
+          </tr>
+          <tr>
+            <td>设计强度等级</td>
+            <td>配合比设计报告编号</td>
+            <td>理论配合比</td>
+            <td>水胶比</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="sjqddj" name="sjqddj"></td>
+            <td><textarea name="phbsjbgbh" id="phbsjbgbh" autoheight></textarea></td>
+            <td><input type="text" id="llphb" name="llphb"></td>
+            <td><input type="text" id="sjb1" name="sjb1"></td>
+          </tr>
+          <tr>
+            <td>制件日期</td>
+            <td>试件尺寸(mm)</td>
+            <td>施工配合比</td>
+            <td>水胶比</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="sjrq" name="sjrq"></td>
+            <td><input type="text" id="sjcc" name="sjcc"></td>
+            <td><input type="text" id="sgphb" name="sgphb"></td>
+            <td><input type="text" id="sjb2" name="sjb2"></td>
+          </tr>
+          <tr>
+            <td>制件时坍落度(mm)</td>
+            <td>制件时扩展度(mm)</td>
+            <td>制件时维勃稠度(s)</td>
+            <td>制件捣实方法</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="zjstld" name="zjstld"></td>
+            <td><input type="text" id="zjskzd" name="zjskzd"></td>
+            <td><input type="text" id="zjswbcd" name="zjswbcd"></td>
+            <td><input type="text" id="zjsdsff" name="zjsdsff"></td>
+          </tr>
+          <tr>
+            <td>养护方式</td>
+            <td>养护温度(℃)</td>
+            <td>工地拌和法</td>
+            <td>工地捣实法</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="yhfs" name="yhfs"></td>
+            <td><input type="text" id="yhwd" name="yhwd"></td>
+            <td><input type="text" id="gdbhf" name="gdbhf"></td>
+            <td><input type="text" id="gddsf" name="gddsf"></td>
+          </tr>
+        </table>
+        <table class="layui-table next">
+          <tr>
+            <td colspan="5">(2)使用材料情况</td>
+          </tr>
+          <tr>
+            <td>材料名称</td>
+            <td>材料产地</td>
+            <td>品种规格</td>
+            <td>报告编号</td>
+            <td>施工拌和用料量(kg/m³)</td>
+          </tr>
+          <tr>
+            <td>水泥</td>
+            <td><textarea name="cd_sn" id="cd_sn" autoheight></textarea></td>
+            <td><textarea name="pzgg_sn" id="pzgg_sn" autoheight></textarea></td>
+            <td><textarea name="bgbh_sn" id="bgbh_sn" autoheight></textarea></td>
+            <td><textarea name="yll_sn" id="yll_sn" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>掺合料1</td>
+            <td><textarea name="cd_chl1" id="cd_chl1" autoheight></textarea></td>
+            <td><textarea name="pzgg_chl1" id="pzgg_chl1" autoheight></textarea></td>
+            <td><textarea name="bgbh_chl1" id="bgbh_chl1" autoheight></textarea></td>
+            <td><textarea name="yll_chl1" id="yll_chl1" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>掺合料2</td>
+            <td><textarea name="cd_chl2" id="cd_chl2" autoheight></textarea></td>
+            <td><textarea name="pzgg_chl2" id="pzgg_chl2" autoheight></textarea></td>
+            <td><textarea name="bgbh_chl2" id="bgbh_chl2" autoheight></textarea></td>
+            <td><textarea name="yll_chl2" id="yll_chl2" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>细骨料</td>
+            <td><textarea name="cd_xgl" id="cd_xgl" autoheight></textarea></td>
+            <td><textarea name="pzgg_xgl" id="pzgg_xgl" autoheight></textarea></td>
+            <td><textarea name="bgbh_xgl" id="bgbh_xgl" autoheight></textarea></td>
+            <td><textarea name="yll_xgl" id="yll_xgl" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>粗骨料</td>
+            <td><textarea name="cd_cgl" id="cd_cgl" autoheight></textarea></td>
+            <td><textarea name="pzgg_cgl" id="pzgg_cgl" autoheight></textarea></td>
+            <td><textarea name="bgbh_cgl" id="bgbh_cgl" autoheight></textarea></td>
+            <td><textarea name="yll_cgl" id="yll_cgl" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>外加剂1</td>
+            <td><textarea name="cd_wjj1" id="cd_wjj1" autoheight></textarea></td>
+            <td><textarea name="pzgg_wjj1" id="pzgg_wjj1" autoheight></textarea></td>
+            <td><textarea name="bgbh_wjj1" id="bgbh_wjj1" autoheight></textarea></td>
+            <td><textarea name="yll_wjj1" id="yll_wjj1" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>外加剂2</td>
+            <td><textarea name="cd_wjj2" id="cd_wjj2" autoheight></textarea></td>
+            <td><textarea name="pzgg_wjj2" id="pzgg_wjj2" autoheight></textarea></td>
+            <td><textarea name="bgbh_wjj2" id="bgbh_wjj2" autoheight></textarea></td>
+            <td><textarea name="yll_wjj2" id="yll_wjj2" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>拌和水</td>
+            <td><textarea name="cd_bhs" id="cd_bhs" autoheight></textarea></td>
+            <td><textarea name="pzgg_bhs" id="pzgg_bhs" autoheight></textarea></td>
+            <td><textarea name="bgbh_bhs" id="bgbh_bhs" autoheight></textarea></td>
+            <td><textarea name="yll_bhs" id="yll_bhs" autoheight></textarea></td>
+          </tr>
+        </table>
+        <table class="layui-table next">
+          <tr>
+            <td colspan="7">(3)抗压强度试验结果</td>
+          </tr>
+          <tr>
+            <td rowspan="2">试件编号</td>
+            <td rowspan="2">试件序号</td>
+            <td rowspan="2">试验日期</td>
+            <td rowspan="2">龄期(d)</td>
+            <td rowspan="2">承压面积(mm²)</td>
+            <td colspan="2">抗压强度$f_{cu}$(MPa)</td>
+          </tr>
+          <tr>
+            <td>单值</td>
+            <td>组值</td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="shijianbh" id="shijianbh" autoheight></textarea></td>
+            <td><textarea name="sjxh1" id="sjxh1" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="shiyanrq" name="shiyanrq"></td>
+            <td rowspan="3"><input type="text" id="lingq" name="lingq"></td>
+            <td><input type="text" id="cymj1" name="cymj1"></td>
+            <td><input type="text" id="kyqddz1" name="kyqddz1"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz" name="kyqdzz"></td>
+          </tr>
+          <tr>
+            <td><textarea name="sjxh2" id="sjxh2" autoheight></textarea></td>
+            <td><input type="text" id="cymj2" name="cymj2"></td>
+            <td><input type="text" id="kyqddz2" name="kyqddz2"></td>
+          </tr>
+          <tr>
+            <td><textarea name="sjxh3" id="sjxh3" autoheight></textarea></td>
+            <td><input type="text" id="cymj3" name="cymj3"></td>
+            <td><input type="text" id="kyqddz3" name="kyqddz3"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  initTable('', '', function () {
+  });
+</script>
+</html>

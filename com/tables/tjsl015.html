@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css"/>
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+            <table class="layui-table table1">
+                <tr><td colspan="7">(4）轻粗骨料筒压强度</td></tr>
+                <tr>
+                    <td rowspan="2">项目</td>
+                    <td rowspan="2">压入深度为20mm时的压力值P(N)</td>
+                    <td rowspan="2">冲压模质量P'</td>
+                    <td rowspan="2">承压面积F<br />(即F=10000m$m^2$)</td>
+                    <td colspan="2">筒压强度(MPa)<br />$f_{a}$($f_{t}$)=(P+P')/F</td>
+                    <td>软化系数</td>
+                </tr>
+                <tr>
+                    <td>单值</td>
+                    <td>均值</td>
+                    <td>$\varphi$ =$f'_{t}$/$f_{a}$</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">干燥状态下轻粗骨料筒压强度值$f_{a}$</td>
+                    <td><input type="text" name="yrsd1" id="yrsd1"></td>
+                    <td><input type="text" name="cymzl1" id="cymzl1"></td>
+                    <td><input type="text" name="cymj1" id="cymj1"></td>
+                    <td><input type="text" name="tyqddz1" id="tyqddz1"></td>
+                    <td rowspan="3"><input type="text" name="tyqdjz1" id="tyqdjz1"></td>
+                    <td rowspan="6"><input type="text" name="rjxs" id="rjxs"></td>
+                </tr>
+                <tr>
+                    
+                    <td><input type="text" name="yrsd2" id="yrsd2"></td>
+                    <td><input type="text" name="cymzl2" id="cymzl2"></td>
+                    <td><input type="text" name="cymj2" id="cymj2"></td>
+                    <td><input type="text" name="tyqddz2" id="tyqddz2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="yrsd3" id="yrsd3"></td>
+                    <td><input type="text" name="cymzl3" id="cymzl3"></td>
+                    <td><input type="text" name="cymj3" id="cymj3"></td>
+                    <td><input type="text" name="tyqddz3" id="tyqddz3"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">浸水1h的面干饱和轻粗骨料筒压强度值$f'_{t}$</td>
+                    <td><input type="text" name="yrsd4" id="yrsd4"></td>
+                    <td><input type="text" name="cymzl4" id="cymzl4"></td>
+                    <td><input type="text" name="cymj4" id="cymj4"></td>
+                    <td><input type="text" name="tyqddz4" id="tyqddz4"></td>
+                    <td rowspan="3"><input type="text" name="tyqdjz2" id="tyqdjz2"></td>
+                </tr>
+                <tr>
+                    
+                    <td><input type="text" name="yrsd5" id="yrsd5"></td>
+                    <td><input type="text" name="cymzl5" id="cymzl5"></td>
+                    <td><input type="text" name="cymj5" id="cymj5"></td>
+                    <td><input type="text" name="tyqddz5" id="tyqddz5"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="yrsd6" id="cymzl6"></td>
+                    <td><input type="text" name="cymzl6" id="cymzl6"></td>
+                    <td><input type="text" name="cymj6" id="cymj6"></td>
+                    <td><input type="text" name="tyqddz6" id="tyqddz6"></td>
+                </tr>
+            </table>
+            <table class="next layui-table table2">
+                <tr>
+                    <td colspan="4"><b>(5)轻粗骨料含泥量</b></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">冲洗前试样的干燥质量$m_{1}$(g)</td>
+                    <td rowspan="2">冲洗并干燥后试样的质量$m_{2}$(g)</td>
+                    <td colspan="2">含泥量$&omega;_{c}$(%)</td>
+                </tr>
+                <tr>
+                    <td>$&omega;_{c}$=[($m_{1}$-$m_{2}$)/$m_{1}$]×100</td>
+                    <td>平均值</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="cxqsy1" id="cxqsy1"></td>
+                    <td><input type="text" name="cxbgz1" id="cxbgz1"></td>
+                    <td><input type="text" name="hnl1" id="hnl1"></td>
+                    <td rowspan="2"><input type="text" name="pjz1" id="1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="cxqsy2" id="cxqsy2"></td>
+                    <td><input type="text" name="cxbgz2" id="cxbgz2"></td>
+                    <td><input type="text" name="hnl2" id="hnl2"></td>
+                </tr>
+            </table>
+            <table class="next layui-table table3">
+                <tr>
+                    <td colspan="4"><b>(6)轻粗骨料含泥量</b></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">试验前试样的干燥质量$m_{3}$(g)</td>
+                    <td rowspan="2">试验后试样的干燥质量$m_{4}$(g)</td>
+                    <td colspan="2">黏土块含量$&omega;_{c,L}$(%)</td>
+                </tr>
+                <tr>
+                    <td>$&omega;_{c,L}$=[($m_{3}$-$m_{4}$)/$m_{3}$]×100</td>
+                    <td>平均值</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="syqsy1" id="syqsy1"></td>
+                    <td><input type="text" name="syhsy1" id="syhsy1"></td>
+                    <td><input type="text" name="ntkhl1" id="ntkhl1"></td>
+                    <td rowspan="2"><input type="text" name="pjz2" id="pjz2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="syqsy2" id="syqsy2"></td>
+                    <td><input type="text" name="syhsy2" id="syhsy2"></td>
+                    <td><input type="text" name="ntkhl2" id="ntkhl2"></td>
+                </tr>
+            </table>
+            <table class="next layui-table table4">
+                <tr>
+                    <td colspan="4"><b>(7)轻骨料烧失量</b></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">试验前试样的干燥质量$m_{1}$(g)</td>
+                    <td rowspan="2">试验后试样的干燥质量$m_{2}$(g)</td>
+                    <td colspan="2">黏土块含量$&omega;_{s}$(%)</td>
+                </tr>
+                <tr>
+                    <td>$&omega;_{s}$=[($m_{1}$-$m_{2}$)/$m_{1}$]×100</td>
+                    <td>平均值</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="zsqsy1" id="zsqsy1"></td>
+                    <td><input type="text" name="zshsy1" id="zshsy1"></td>
+                    <td><input type="text" name="ssl1" id="ssl1"></td>
+                    <td rowspan="2"><input type="text" name="pjz3" id="pjz3"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="zsqsy2" id="zsqsy2"></td>
+                    <td><input type="text" name="zshsy2" id="zshsy2"></td>
+                    <td><input type="text" name="ssl2" id="ssl2"></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="tableRemark"></div>
+    </div>
+</form>
+</body>
+<script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('head', 'tail', function () {
+        $('#tiTableName').text('轻骨料试验记录（二）');
+    });
+</script>
+</html>

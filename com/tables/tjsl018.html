@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <!-- 氯离子含量表 -->
+        <table class="layui-table">
+          <tr>
+            <td colspan="7" style="font-weight: bold;">（7）氯离子含量</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 40px;">次数</td>
+            <td rowspan="2">式样质量m(g)</td>
+            <td rowspan="2">每毫升硝酸汞准溶液相当于氯的毫克数T<sub>Cl</sub>(mg/mL)</td>
+            <td rowspan="2">空白试验消耗硝酸汞标准溶液的体积V<sub>1</sub>(mL)</td>
+            <td rowspan="2">滴定时消耗硝酸汞标准溶液的体积V<sub>1</sub>(mL)</td>
+            <td colspan="2">氯离子含量X<sub>Cl</sub>(%)<br/>X<sub>Cl</sub>=T<sub>Cl</sub>(V<sub>2</sub>-V<sub>1</sub>)x0.1/m</td>
+          </tr>
+          <tr>
+            <td>单值</td>
+            <td>平均值</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><textarea name="llzsyzl1" id="llzsyzl1" autoheight></textarea></td>
+            <td><textarea name="llzhks1" id="llzhks1" autoheight></textarea></td>
+            <td><textarea name="kbtj1" id="kbtj1" autoheight></textarea></td>
+            <td><textarea name="ddtj1" id="ddtj1" autoheight></textarea></td>
+            <td><textarea name="llzdz1" id="llzdz1" autoheight></textarea></td>
+            <td rowspan="2"><input type="text" name="llzjz" id="llzjz"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><textarea name="llzsyzl2" id="llzsyzl2" autoheight></textarea></td>
+            <td><textarea name="llzhks2" id="llzhks2" autoheight></textarea></td>
+            <td><textarea name="kbtj2" id="kbtj2" autoheight></textarea></td>
+            <td><textarea name="ddtj2" id="ddtj2" autoheight></textarea></td>
+            <td><textarea name="llzdz2" id="llzdz2" autoheight></textarea></td>
+          </tr>
+        </table>
+        <!-- 碱含量表 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="9" style="font-weight: bold;">（8）碱含量</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 40px;">次数</td>
+            <td rowspan="2">测试质量m(g)</td>
+            <td rowspan="2">按火焰光度记使用规程进行测定，在工作曲线上查出100mL测定溶液中氧化钾含量m<sub>1</sub>(g)</td>
+            <td rowspan="2">按火焰光度记使用规程进行测定，在工作曲线上查出100mL测定溶液中氧化钠含量m<sub>2</sub>(g)</td>
+            <td colspan="2">氧化钾含量X<sub>K<sub>2</sub>O</sub>(%)<br/><sub>K<sub>2</sub>O</sub>=(m<sub>1</sub>x0.1)/m</td>
+            <td colspan="2">氧化钾含量X<sub>Na<sub>2</sub>O</sub>(%)<br/><sub>Na<sub>2</sub>O</sub>=(m<sub>2</sub>x0.1)/m</td>
+            <td rowspan="2">碱含量X(%)<br/>X=X<sub>Na<sub>2</sub>O</sub>+0.658xX<sub>K<sub>2</sub>O</sub></td>
+          </tr>
+          <tr>
+            <td>单值</td>
+            <td>平均值</td>
+            <td>单值</td>
+            <td>平均值</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><textarea autoheight id="jhlsyzl1" name="jhlsyzl1"></textarea></td>
+            <td><textarea autoheight id="yhjhl1" name="yhjhl1"></textarea></td>
+            <td><textarea autoheight id="yhnhl1" name="yhnhl1"></textarea></td>
+            <td><textarea autoheight id="yhjdz1" name="yhjdz1"></textarea></td>
+            <td rowspan="2"><input type="text" name="yhjjz" id="yhjjz"></td>
+            <td><textarea autoheight id="yhndz1" name="yhndz1"></textarea></td>
+            <td rowspan="2"><input type="text" name="yhnjz" id="yhnjz"></td>
+            <td rowspan="2"><input type="text" name="jhl" id="jhl"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><textarea autoheight id="jhlsyzl2" name="jhlsyzl2"></textarea></td>
+            <td><textarea autoheight id="yhjhl2" name="yhjhl2"></textarea></td>
+            <td><textarea autoheight id="yhnhl2" name="yhnhl2"></textarea></td>
+            <td><textarea autoheight id="yhjdz2" name="yhjdz2"></textarea></td>
+            <td><textarea autoheight id="yhndz2" name="yhndz2"></textarea></td>
+          </tr>
+        </table>
+        <!-- 安定性 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="9" style="font-weight: bold;">（9）安定性</td>
+          </tr>
+          <tr>
+            <td rowspan="3">测定方法</td>
+            <td rowspan="3">制件日期</td>
+            <td rowspan="3">测定日期</td>
+            <td colspan="5">试件蒸煮前后情况</td>
+            <td rowspan="3">测定结果</td>
+          </tr>
+          <tr>
+            <td rowspan="2">试件号</td>
+            <td rowspan="2">A值(mm)</td>
+            <td rowspan="2">C值(mm)</td>
+            <td colspan="2">C-A值(mm)</td>
+          </tr>
+          <tr>
+            <td>单值</td>
+            <td>平均值</td>
+          </tr>
+          <tr>
+            <td rowspan="2"><input type="text" name="cdff" id="cdff"></td>
+            <td rowspan="2"><input type="text" name="zjrq" id="zjrq"></td>
+            <td rowspan="2"><input type="text" name="cdrq" id="cdrq"></td>
+            <td><textarea autoheight id="sjh1" name="sjh1"></textarea></td>
+            <td><textarea autoheight id="az1" name="az1"></textarea></td>
+            <td><textarea autoheight id="cz1" name="cz1"></textarea></td>
+            <td><textarea autoheight id="cadz1" name="cadz1"></textarea></td>
+            <td rowspan="2"><input type="text" name="cajz" id="cajz"></td>
+            <td rowspan="2"><input type="text" name="cdjg" id="cdjg"></td>
+          </tr>
+          <tr>
+            <td><textarea autoheight id="sjh2" name="sjh2"></textarea></td>
+            <td><textarea autoheight id="az2" name="az2"></textarea></td>
+            <td><textarea autoheight id="cz2" name="cz2"></textarea></td>
+            <td><textarea autoheight id="cadz2" name="cadz2"></textarea></td>
+          </tr>
+        </table>
+        <!-- 活性指数 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="13" style="font-weight: bold;">（10）活性指数</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 40px;">胶砂种类</td>
+            <td rowspan="2">水泥(g)</td>
+            <td rowspan="2">掺和料(g)</td>
+            <td rowspan="2">标准砂(g)</td>
+            <td rowspan="2">水(mL)</td>
+            <td colspan="3">28d破坏荷载(kN)</td>
+            <td colspan="4">28d抗压强度(MPa)</td>
+            <td rowspan="2">活性指数<br/>H<sub>28</sub>=R<sub>28</sub>/R<sub>028</sub>x100</td>
+          </tr>
+          <tr>
+            <td colspan="3">单值</td>
+            <td colspan="3">单值</td>
+            <td>平均</td>
+          </tr>
+          <tr>
+            <td rowspan="2">对比胶砂R<sub>0</sub></td>
+            <td rowspan="2"><input type="text" name="dbsn" id="dbsn"></td>
+            <td rowspan="2"><input type="text" name="dbchl" id="dbchl"></td>
+            <td rowspan="2"><input type="text" name="dbbzs" id="dbbzs"></td>
+            <td rowspan="2"><input type="text" name="dbs" id="dbs"></td>
+            <td><input type="text" name="dbhzdza1" id="dbhzdza1"></td>
+            <td><input type="text" name="dbhzdzb1" id="dbhzdzb1"></td>
+            <td><input type="text" name="dbhzdzc1" id="dbhzdzc1"></td>
+            <td><input type="text" name="dbkydza1" id="dbkydza1"></td>
+            <td><input type="text" name="dbkydzb1" id="dbkydzb1"></td>
+            <td><input type="text" name="dbkydzc1" id="dbkydzc1"></td>
+            <td rowspan="2"><input type="text" name="dbkyjz" id="dbkyjz"></td>
+            <td rowspan="4"><input type="text" name="hxzs" id="hxzs"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="dbhzdza2" id="dbhzdza2"></td>
+            <td><input type="text" name="dbhzdzb2" id="dbhzdzb2"></td>
+            <td><input type="text" name="dbhzdzc2" id="dbhzdzc2"></td>
+            <td><input type="text" name="dbkydza2" id="dbkydza2"></td>
+            <td><input type="text" name="dbkydzb2" id="dbkydzb2"></td>
+            <td><input type="text" name="dbkydzc2" id="dbkydzc2"></td>
+          </tr>
+          <tr>
+            <td rowspan="2">对比胶砂R</td>
+            <td rowspan="2"><input type="text" name="sysn" id="sysn"></td>
+            <td rowspan="2"><input type="text" name="sychl" id="sychl"></td>
+            <td rowspan="2"><input type="text" name="sybzs" id="sybzs"></td>
+            <td rowspan="2"><input type="text" name="sys" id="sys"></td>
+            <td><input type="text" name="syhzdza1" id="syhzdza1"></td>
+            <td><input type="text" name="syhzdzb1" id="syhzdzb1"></td>
+            <td><input type="text" name="syhzdzc1" id="syhzdzc1"></td>
+            <td><input type="text" name="sykydza1" id="sykydza1"></td>
+            <td><input type="text" name="sykydzb1" id="sykydzb1" ></td>
+            <td><input type="text" name="sykydzc1" id="sykydzc1"></td>
+            <td rowspan="2"><input type="text" name="sykyjz" id="sykyjz"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="syhzdza2" id="syhzdza2"></td>
+            <td><input type="text" name="syhzdzb2" id="syhzdzb2"></td>
+            <td><input type="text" name="syhzdzc2" id="syhzdzc2"></td>
+            <td><input type="text" name="sykydza2" id="sykydza2"></td>
+            <td><input type="text" name="sykydzb2" id="sykydzb2"></td>
+            <td><input type="text" name="sykydzc2" id="sykydzc2"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  initTable('head', 'tail', function () {
+    $('#tiTableName').text('混凝土用粉煤灰实验记录(二)');
+    $('#tiCustomTableNum').text('铁建试录017');
+    $('.table-noborder').append('<tr><td>样品产地</td><td><textarea name="yangpinchandi" id="yangpinchandi" autoheight></textarea></td><td>代表数值</td><td><textarea name="daibiaoshuzhi" id="daibiaoshuzhi" autoheight></textarea></td></tr><tr><td>规格种类</td><td><textarea name="guigezhonglei" id="guigezhonglei" autoheight></textarea></td><td>试验日期</td><td><textarea name="shiyanriqi" id="shiyanriqi" autoheight></textarea></td></tr>');
+  });
+
+  /* 计算氯离子含量 */
+  fixWhenBlur(['llzsyzl', 'llzhks', 'kbtj', 'ddtj'], null, llzhl);
+  function llzhl() {
+    let sum = 0, num = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#llzsyzl' + i).val();
+      let b = $('#llzhks' + i).val();
+      let c = $('#kbtj' + i).val();
+      let d = $('#ddtj' + i).val();
+      if (a != '' && b != '' && c != '' && d != '') {
+        let e = parseFloat(b) * (parseFloat(d) - parseFloat(c)) * 0.1 / parseFloat(a);
+        e = toFixedEvenRound(e, 2);
+        $('#llzdz' + i).val(e);
+        sum += parseFloat(e);
+        num++;
+      }else{
+        $('#llzdz' + i).val("");
+      }
+    }
+    //计算平均值
+    if (num > 0) {
+      let avg = sum / num;
+      $('#llzjz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#llzjz').val('');
+		}
+  }  
+
+  /* 计算碱含量 */
+  fixWhenBlur(['jhlsyzl', 'yhjhl', 'yhnhl'], null, jhl);
+  function jhl() {
+    let sum1 = 0, num1 = 0, sum2 = 0, num2 = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#jhlsyzl' + i).val();
+      let b = $('#yhjhl' + i).val();
+      let c = $('#yhnhl' + i).val();
+      if (a != '' && b != '') {
+        let d = parseFloat(b) *  0.1 / parseFloat(a);
+        d = toFixedEvenRound(d, 2);
+        $('#yhjdz' + i).val(d);
+        sum1 += parseFloat(d);
+        num1++;
+      }else{
+        $('#yhjdz' + i).val("");
+      }
+      if (a != '' && c != '') {
+        let e = parseFloat(c) *  0.1 / parseFloat(a);
+        e = toFixedEvenRound(e, 2);
+        $('#yhndz' + i).val(e);
+        sum2 += parseFloat(e);
+        num2++;
+      }else{
+        $('#yhndz' + i).val("");
+      }
+    }
+    //计算平均值
+    if (num1 > 0) {
+      let avg = sum1 / num1;
+      $('#yhjjz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#yhjjz').val('');
+    }
+    if (num2 > 0) {
+      let avg = sum2 / num2;
+      $('#yhnjz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#yhnjz').val('');
+    }
+    //计算碱含量
+    if ($('#yhjjz').val() != '' && $('#yhnjz').val() != ''){
+      let f = parseFloat($('#yhnjz').val()) + parseFloat($('#yhjjz').val()) * 0.658;
+      $('#jhl').val(toFixedEvenRound(f, 2));
+		} else {
+      $('#jhl').val('');
+    }
+  }
+
+  /* 计算安定性 */
+  fixWhenBlur(['az', 'cz'], null, adx);
+  function adx() {
+    let sum = 0, num = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#az' + i).val();
+      let b = $('#cz' + i).val();
+      if (a != '' && b != '') {
+        let c = parseFloat(b) - parseFloat(a);
+        c = toFixedEvenRound(c, 2);
+        $('#cadz' + i).val(c);
+        sum += parseFloat(c);
+        num++;
+      }else{
+        $('#cadz' + i).val("");
+      }
+    }
+    if (num > 0) {//计算平均值
+      let avg = sum / num;
+      $('#cajz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#cajz').val('');
+		}
+  }
+
+
+</script>
+</html>

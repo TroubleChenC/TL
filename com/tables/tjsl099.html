@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="../../plugins/layui/css/layui.css"
+      media="all"
+    />
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+      }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+      .tableContent td {
+        min-height: 10px;
+        line-height: 15px;
+        height: 31px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 钢筋机械连接接头试验记录 -->
+    <form id="form" action="" method="post" onsubmit="return false;">
+      <div class="paperA4 paperA4-vertical">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+          <table class="layui-table">
+            <tr>
+              <td rowspan="3" style="width: 100px">
+                仪器设备<br />及<br />环境条件
+              </td>
+              <td style="width: 120px">仪器设备名称</td>
+              <td>型号</td>
+              <td>管理编号</td>
+              <td>示值范围</td>
+              <td>分辨力</td>
+              <td>温度（℃）</td>
+              <td>相对湿度（%）</td>
+            </tr>
+            <tr>
+              <td>
+                <textarea
+                  type="text"
+                  name="sbmc1"
+                  id="sbmc1"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea type="text" name="xh1" id="xh1" autoheight></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="glbh1"
+                  id="glbh1"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="szfw1"
+                  id="szfw1"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="fbl1"
+                  id="fbl1"
+                  autoheight
+                ></textarea>
+              </td>
+              <td rowspan="2"><input type="text" name="wd" id="wd" /></td>
+              <td rowspan="2"><input type="text" name="xdsd" id="xdsd" /></td>
+            </tr>
+            <tr>
+              <td>
+                <textarea
+                  type="text"
+                  name="sbmc2"
+                  id="sbmc2"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea type="text" name="xh2" id="xh2" autoheight></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="glbh2"
+                  id="glbh2"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="szfw2"
+                  id="szfw2"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="fbl2"
+                  id="fbl2"
+                  autoheight
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>样品状态描述</td>
+              <td colspan="2">
+                <input type="text" name="ypztms" id="ypztms" />
+              </td>
+              <td colspan="2">采用标准</td>
+              <td colspan="3"><input type="text" name="cybz" id="cybz" /></td>
+            </tr>
+          </table>
+          <!-- （1）母材拉伸试验 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">(1)母材拉伸试验</td>
+            </tr>
+            <tr>
+              <td rowspan="2">项&nbsp;&nbsp;&nbsp;目</td>
+              <td colspan="4">试件编号</td>
+            </tr>
+            <tr>
+              <td><textarea name="sjbh1" id="sjbh1" autoheight></textarea></td>
+              <td><textarea name="sjbh2" id="sjbh2" autoheight></textarea></td>
+              <td><textarea name="sjbh3" id="sjbh3" autoheight></textarea></td>
+              <td><textarea name="sjbh4" id="sjbh4" autoheight></textarea></td>
+            </tr>
+            <tr>
+              <td>母材公称直径a(mm)</td>
+              <td colspan="2">
+                <input type="text" name="mcgczj1" id="mcgczj1" />
+              </td>
+              <td colspan="2">
+                <input type="text" name="mcgczj2" id="mcgczj2" />
+              </td>
+            </tr>
+            <tr>
+              <td>母材公称面积S($mm^2)$</td>
+              <td colspan="2">
+                <input type="text" name="mcgcmj1" id="mcgcmj1" readonly />
+              </td>
+              <td colspan="2">
+                <input type="text" name="mcgcmj2" id="mcgcmj2" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>母材最大力$F_{b}(kN)$</td>
+              <td><input type="text" name="mczdl1" id="mczdl1" /></td>
+              <td><input type="text" name="mczdl2" id="mczdl2" /></td>
+              <td><input type="text" name="mczdl3" id="mczdl3" /></td>
+              <td><input type="text" name="mczdl4" id="mczdl4" /></td>
+            </tr>
+            <tr>
+              <td>母材抗拉强度$\sigma_{b}(MPa)$</td>
+              <td>
+                <input type="text" name="mcklqd1" id="mcklqd1" readonly />
+              </td>
+              <td>
+                <input type="text" name="mcklqd2" id="mcklqd2" readonly />
+              </td>
+              <td>
+                <input type="text" name="mcklqd3" id="mcklqd3" readonly />
+              </td>
+              <td>
+                <input type="text" name="mcklqd4" id="mcklqd4" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>母材断裂特征</td>
+              <td><input type="text" name="mcdltz1" id="mcdltz1" /></td>
+              <td><input type="text" name="mcdltz2" id="mcdltz2" /></td>
+              <td><input type="text" name="mcdltz3" id="mcdltz3" /></td>
+              <td><input type="text" name="mcdltz4" id="mcdltz4" /></td>
+            </tr>
+          </table>
+          <!-- (2)机械连接接头拉伸试验 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="7">(2)机械连接接头拉伸试验</td>
+            </tr>
+            <tr>
+              <td rowspan="2">项&nbsp;&nbsp;&nbsp;目</td>
+              <td colspan="6">试件编号</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="sjbh1" id="sjbh1" /></td>
+              <td><input type="text" name="sjbh2" id="sjbh2" /></td>
+              <td><input type="text" name="sjbh3" id="sjbh3" /></td>
+              <td><input type="text" name="sjbh4" id="sjbh4" /></td>
+              <td><input type="text" name="sjbh5" id="sjbh5" /></td>
+              <td><input type="text" name="sjbh6" id="sjbh6" /></td>
+            </tr>
+            <tr>
+              <td>试件连接长度L(mm)</td>
+              <td><input type="text" name="sjljcd1" id="sjljcd1" /></td>
+              <td><input type="text" name="sjljcd2" id="sjljcd2" /></td>
+              <td><input type="text" name="sjljcd3" id="sjljcd3" /></td>
+              <td><input type="text" name="sjljcd4" id="sjljcd4" /></td>
+              <td><input type="text" name="sjljcd5" id="sjljcd5" /></td>
+              <td><input type="text" name="sjljcd6" id="sjljcd6" /></td>
+            </tr>
+            <tr>
+              <td>接头面积$S(mm^2)$</td>
+              <td><input type="text" name="jtmj1" id="jtmj1" readonly /></td>
+              <td><input type="text" name="jtmj2" id="jtmj2" readonly /></td>
+              <td><input type="text" name="jtmj3" id="jtmj3" readonly /></td>
+              <td><input type="text" name="jtmj4" id="jtmj4" readonly /></td>
+              <td><input type="text" name="jtmj5" id="jtmj5" readonly /></td>
+              <td><input type="text" name="jtmj6" id="jtmj6" readonly /></td>
+            </tr>
+            <tr>
+              <td>接头最大力$f_{b}(kN)$</td>
+              <td><input type="text" name="jtzdl1" id="jtzdl1" /></td>
+              <td><input type="text" name="jtzdl2" id="jtzdl2" /></td>
+              <td><input type="text" name="jtzdl3" id="jtzdl3" /></td>
+              <td><input type="text" name="jtzdl4" id="jtzdl4" /></td>
+              <td><input type="text" name="jtzdl5" id="jtzdl5" /></td>
+              <td><input type="text" name="jtzdl6" id="jtzdl6" /></td>
+            </tr>
+            <tr>
+              <td>接头抗拉强度$\sigma_{b}(MPa)$</td>
+              <td>
+                <input type="text" name="jtklqd1" id="jtklqd1" readonly />
+              </td>
+              <td>
+                <input type="text" name="jtklqd2" id="jtklqd2" readonly />
+              </td>
+              <td>
+                <input type="text" name="jtklqd3" id="jtklqd3" readonly />
+              </td>
+              <td>
+                <input type="text" name="jtklqd4" id="jtklqd4" readonly />
+              </td>
+              <td>
+                <input type="text" name="jtklqd5" id="jtklqd5" readonly />
+              </td>
+              <td>
+                <input type="text" name="jtklqd6" id="jtklqd6" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>端口位置（距连接处端点距离）(mm)</td>
+              <td><input type="text" name="dkwz1" id="dkwz1" /></td>
+              <td><input type="text" name="dkwz2" id="dkwz2" /></td>
+              <td><input type="text" name="dkwz3" id="dkwz3" /></td>
+              <td><input type="text" name="dkwz4" id="dkwz4" /></td>
+              <td><input type="text" name="dkwz5" id="dkwz5" /></td>
+              <td><input type="text" name="dkwz6" id="dkwz6" /></td>
+            </tr>
+            <tr>
+              <td>接头断裂特征</td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz1"
+                  id="jtdltz1"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz2"
+                  id="jtdltz2"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz3"
+                  id="jtdltz3"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz4"
+                  id="jtdltz4"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz5"
+                  id="jtdltz5"
+                  autoheight
+                ></textarea>
+              </td>
+              <td>
+                <textarea
+                  type="text"
+                  name="jtdltz6"
+                  id="jtdltz6"
+                  autoheight
+                ></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tableRemark"></div>
+      </div>
+    </form>
+  </body>
+  <script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('', '', function () {});
+
+    // 计算函数
+    // 计算母材公称面积
+    fixWhenBlur(['mcgczj'], null, jsmcgcmj);
+    function jsmcgcmj() {
+      for (var i = 1; i <= 2; i++) {
+        let mcgczj = $('#mcgczj' + i).val();
+        let res = '';
+        if (validNum(mcgczj)) {
+          res = (PI * mcgczj * mcgczj) / 4;
+          res = res.toRound(1);
+        }
+
+        $('#mcgcmj' + i).val(res);
+      }
+    }
+    // 计算母材抗拉强度
+    fixWhenBlur(['mcgczj', 'mczdl'], null, jsmcklqd);
+    function jsmcklqd() {
+      for (var i = 1; i <= 4; i++) {
+        let mczdl = $('#mczdl' + i).val();
+
+        if (i <= 2) {
+          var mcgcmj = $('#mcgcmj1').val();
+        } else {
+          var mcgcmj = $('#mcgcmj2').val();
+        }
+        let res = '';
+
+        if (validNum(mczdl, mcgcmj)) {
+          // 强度(MPa) = [最大承受力（n）/公称截面积（mm*mm）]*1000
+          res = (mczdl / mcgcmj) * 1000;
+          res = res.toRound(1);
+        }
+        $('#mcklqd' + i).val(res);
+      }
+    }
+    // 计算接头面积
+    fixWhenBlur(['sjljcd'], null, jsjtmj);
+    function jsjtmj() {
+      for (var i = 1; i <= 6; i++) {
+        let sjljcd = $('#sjljcd' + i).val();
+        let res = '';
+        if (validNum(sjljcd)) {
+          res = (PI * sjljcd * sjljcd) / 4;
+          res = res.toRound(1);
+        }
+
+        $('#jtmj' + i).val(res);
+      }
+    }
+    // 计算接头抗拉强度
+    fixWhenBlur(['sjljcd', 'jtzdl'], null, jsjtklqd);
+    function jsjtklqd() {
+      for (var i = 1; i <= 6; i++) {
+        let jtmj = $('#jtmj' + i).val();
+        let jtzdl = $('#jtzdl' + i).val();
+        let res = '';
+
+        if (validNum(jtmj, jtzdl)) {
+          // 强度(MPa) = [最大承受力（n）/公称截面积（mm*mm）]*1000
+          res = (jtzdl / jtmj) * 1000;
+          res = res.toRound(1);
+        }
+
+        $('#jtklqd' + i).val(res);
+      }
+    }
+  </script>
+</html>

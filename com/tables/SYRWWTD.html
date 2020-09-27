@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <style>
+    .tableContent td {
+      height: 30px;
+    }
+
+    .gs {
+      font-size: 14px;
+    }
+
+    .head textarea {
+      text-align: left;
+    }
+    .tableContent td{
+      height: 38px;
+    }
+
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader">
+        <div class="head">
+          <input type="hidden" name="id" id="id"/>
+          <!--项目名-->
+          <!--<div class="projectName">-->
+          <!--<span id="departfullname">项目名</span>-->
+          <!--</div>-->
+
+          <!--表名-->
+          <div class="tablename">
+            <span id="tiTableName">委托单</span>
+            <div class="table-num">
+              <div style="margin-bottom: 2px">
+                <span>表号:</span>
+                <span id="tiCustomTableNum">铁建试录023</span>
+              </div>
+              <div>
+                <span>标准代号:</span>
+                <span>Q/CR 9205-2015</span>
+              </div>
+            </div>
+          </div>
+
+          <!--表头内容-->
+          <div class="tablecontent">
+            <table class="layui-table table-noborder">
+              <tr>
+                <td style="width: 80px">委托单位</td>
+                <td><textarea name="weituodanwei" id="weituodanwei" autoheight readonly></textarea></td>
+                <td style="width: 80px">委托编号</td>
+                <td><textarea name="weituobianhao" id="weituobianhao" autoheight readonly></textarea></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="tableContent">
+        <table class="layui-table">
+          <tr>
+            <td>样品名称</td>
+            <td colspan="3"><textarea name="sampleName" id="sampleName" autoheight readonly></textarea></td>
+          </tr>
+          <tr>
+            <td>送样编号</td>
+            <td colspan="3"><textarea name="sampleNo" id="sampleNo" autoheight readonly></textarea></td>
+          </tr>
+          <tr>
+            <td>产地厂名</td>
+            <td colspan="3"><textarea name="sampleShengChanChangJia" id="sampleShengChanChangJia" autoheight readonly></textarea></td>
+          </tr>
+          <tr>
+            <td>试样数量</td>
+            <td colspan="3"><textarea name="sampleShiYanZuShu" id="sampleShiYanZuShu" autoheight readonly></textarea></td>
+          </tr>
+          <tr>
+            <td>规格种类</td>
+            <td colspan="3"><textarea name="sampleGuiGeXingHao" id="sampleGuiGeXingHao" autoheight readonly></textarea></td>
+          </tr>
+<!--          <tr>-->
+<!--            <td>试样数量</td>-->
+<!--            <td colspan="3"><input type="text" name="xxx" id="xxx"/></td>-->
+<!--          </tr>-->
+          <tr>
+            <td>代表数量</td>
+            <td colspan="3"><textarea name="sampleDaiBiaoShuLiang" id="sampleDaiBiaoShuLiang" autoheight readonly></textarea></td>
+          </tr>
+          <tr>
+            <td>取样地点</td>
+            <td colspan="3">
+              <textarea name="sampleQuYangDiDian" id="sampleQuYangDiDian" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr style="height: 60px">
+            <td>样品描述</td>
+            <td colspan="3">
+              <textarea name="sampleDescribe" id="sampleDescribe" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>取样日期</td>
+            <td colspan="3"><input type="text" name="sampleDate" id="sampleDate" readonly/></td>
+          </tr>
+          <tr>
+            <td>工程名称</td>
+            <td colspan="3">
+              <textarea name="gonchengmingcheng" id="gonchengmingcheng" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>施工部位</td>
+            <td colspan="3">
+              <textarea name="sampleGcbw" id="sampleGcbw" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>检验标准</td>
+            <td colspan="3">
+              <textarea name="jianyanbiaozhun" id="jianyanbiaozhun" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr style="height: 60px">
+            <td>试验项目</td>
+            <td colspan="3">
+              <textarea name="sampleRemark" id="sampleRemark" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr id="linqi">
+            <td>龄期</td>
+            <td colspan="3">
+              <textarea name="sampleLingQi" id="sampleLingQi" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr style="height: 60px">
+            <td>试样验收意见</td>
+            <td colspan="3">
+              <textarea name="shiyanyanshoyijian" id="shiyanyanshoyijian" autoheight readonly></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>收样日期</td>
+            <td><input type="text" name="shouyangriqi" id="shouyangriqi" readonly/></td>
+            <td>委托类型</td>
+            <td><input type="text" name="weituoleixing" id="weituoleixing" readonly/></td>
+          </tr>
+          <tr>
+            <td>取样人</td>
+            <td><input type="text" name="sampleQuYangRen" id="sampleQuYangRen" readonly/></td>
+            <td>取样见证人</td>
+            <td><input type="text" name="quyangjianzhengren" id="quyangjianzhengren" readonly/></td>
+          </tr>
+          <tr>
+            <td>委托人</td>
+            <td><input type="text" name="weituoren" id="weituoren" readonly/></td>
+            <td>委托单位负责人</td>
+            <td><input type="text" name="weituodanweifuzeren" id="weituodanweifuzeren" readonly/></td>
+          </tr>
+          <tr>
+            <td>住址及邮箱</td>
+            <td><input type="text" name="zhuzhiyoubian" id="zhuzhiyoubian" readonly/></td>
+            <td>联系电话</td>
+            <td><input type="text" name="lianxidianhua" id="lianxidianhua" readonly/></td>
+          </tr>
+          <tr>
+            <td>收样人</td>
+            <td><input type="text" name="shouyangren" id="shouyangren" readonly/></td>
+            <td>预计报告发出日期</td>
+            <td><input type="text" name="yujibaogaofachuriqi" id="yujibaogaofachuriqi" readonly/></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark" style="display: none;"></div>
+    </div>
+  </form>
+</body>
+<script>
+  // initTable('header-tu', 'remarkIdea', function () {
+  //   initform()
+  // });
+   init();
+
+  taAdapt(1)
+  function taAdapt(pageCount) {
+    // 需要设置高度自适应的textarea  加autoheight属性
+    let selector = $('textarea[autoheight]');
+    $(selector).each(function () {
+      this.rows = 1;
+      $(this).css({
+        height: 'auto'
+      });
+      let newH = this.scrollHeight + 2;
+      $(this).css({
+        height: newH + 'px'
+      });
+    })
+
+    $(selector).on('input', function () {
+      $(this).css({
+        height: 'auto'
+      });
+      let newH = this.scrollHeight + 2;
+      $(this).css({
+        height: newH + 'px'
+      });
+    })
+  }
+
+
+  let $iframe = window.parent.$('iframe');
+  for (let i = 0; i < $iframe.length; i++) {
+    if ($iframe[i].contentWindow == window) {
+      $($iframe[i]).css({
+        height: document.body.offsetHeight,
+        width: $('.paperA4')[0].offsetWidth,
+        margin: '0 auto',
+        display: 'block',
+        position: 'unset'
+      })
+    }
+  }
+
+  initform()
+ function initform(){
+     id = getQueryString('id');
+     console.log(id)
+   if (1===1){
+     $("#linqi").hide();
+   }
+   }
+  ajax({
+    url: 'samp/' + getQueryString('id'),
+    type: 'GET',
+    success: function (data) {
+      console.log(data)
+      $('#sampleName').val(data.obj.sampleName)
+      $('#sampleNo').val(data.obj.sampleName)
+      $('#sampleShengChanChangJia').val(data.obj.sampleShengChanChangJia)
+      $('#sampleShiYanZuShu').val(data.obj.sampleShiYanZuShu)
+      $('#sampleGuiGeXingHao').val(data.obj.sampleGuiGeXingHao)
+      $('#sampleDaiBiaoShuLiang').val(data.obj.sampleDaiBiaoShuLiang)
+      $('#sampleQuYangDiDian').val(data.obj.sampleQuYangDiDian)
+      $('#sampleDescribe').val(data.obj.sampleDescribe)
+      $('#sampleDate').val(data.obj.sampleDate)
+      $('#gonchengmingcheng').val(data.obj.gonchengmingcheng)
+      $('#sampleGcbw').val(data.obj.sampleGcbw)
+      $('#jianyanbiaozhun').val(data.obj.jianyanbiaozhun)
+      $('#sampleRemark').val(data.obj.sampleRemark)
+      $('#shiyanyanshoyijian').val(data.obj.shiyanyanshoyijian)
+      $('#shouyangriqi').val(data.obj.shouyangriqi)
+      $('#weituoleixing').val(data.obj.weituoleixing)
+      $('#sampleQuYangRen').val(data.obj.sampleQuYangRen)
+      $('#quyangjianzhengren').val(data.obj.quyangjianzhengren)
+      $('#quyangjianzhengren').val(data.obj.quyangjianzhengren)
+      $('#weituoren').val(data.obj.weituoren)
+      $('#weituodanweifuzeren').val(data.obj.weituodanweifuzeren)
+      $('#zhuzhiyoubian').val(data.obj.zhuzhiyoubian)
+      $('#lianxidianhua').val(data.obj.lianxidianhua)
+      console.log(data.obj.shouyangren)
+      $('#shouyangren').val(data.obj.shouyangren)
+      $('#yujibaogaofachuriqi').val(data.obj.yujibaogaofachuriqi)
+      $('#weituodanwei').val(data.obj.weituodanwei)
+      $('#weituobianhao').val(data.obj.weituobianhao)
+      $('#sampleLingQi').val(data.obj.sampleLingQi)
+      if (data.obj.sampleLingQi===''||data.obj.sampleLingQi===null){
+        $("#linqi").hide();
+      }else{
+        $("#linqi").show();
+      }
+    }
+  });
+</script>
+</html>

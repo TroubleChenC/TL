@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+    sup {
+      position: relative;
+      left: -6px;
+    }
+    .setW {
+      width: 38px;
+    }
+    .setW2 {
+      width: 180px;
+    }
+    .mjx-chtml {
+      font-size: 14px!important;
+    }
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <table class="layui-table">
+          <tr>
+            <td rowspan="4" style="width: 80px;">仪器设备及环境条件</td>
+            <td style="width: 130px;">仪器设备名称</td>
+            <td>型号</td>
+            <td>管理编号</td>
+            <td>示值范围</td>
+            <td>分辨力</td>
+            <td>温度(℃)</td>
+            <td style="width: 80px;">相对湿度(%)</td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc1" id="yqsbmc1" autoheight></textarea></td>
+            <td><textarea name="xinghao1" id="xinghao1" autoheight></textarea></td>
+            <td><textarea name="glbh1" id="glbh1" autoheight></textarea></td>
+            <td><textarea name="szfw1" id="szfw1" autoheight></textarea></td>
+            <td><textarea name="fbl1" id="fbl1" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="wendu" name="wendu"></td>
+            <td rowspan="3"><input type="text" id="xdsd" name="xdsd"></td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc2" id="yqsbmc2" autoheight></textarea></td>
+            <td><textarea name="xinghao2" id="xinghao2" autoheight></textarea></td>
+            <td><textarea name="glbh2" id="glbh2" autoheight></textarea></td>
+            <td><textarea name="szfw2" id="szfw2" autoheight></textarea></td>
+            <td><textarea name="fbl2" id="fbl2" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc3" id="yqsbmc3" autoheight></textarea></td>
+            <td><textarea name="xinghao3" id="xinghao3" autoheight></textarea></td>
+            <td><textarea name="glbh3" id="glbh3" autoheight></textarea></td>
+            <td><textarea name="szfw3" id="szfw3" autoheight></textarea></td>
+            <td><textarea name="fbl3" id="fbl3" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>样品状态描述</td>
+            <td colspan="2"><textarea name="ypztms" id="ypztms" autoheight></textarea></td>
+            <td colspan="2">采用标准</td>
+            <td colspan="3"><textarea name="cybz" id="cybz" autoheight></textarea></td>
+          </tr>
+        </table>
+        <table class="layui-table next">
+          <tr>
+            <td rowspan="2" colspan="2">项目</td>
+            <td colspan="4">试件编号</td>
+          </tr>
+          <tr>
+            <td><textarea name="sjbh11" id="sjbh11" autoheight></textarea></td>
+            <td><textarea name="sjbh12" id="sjbh12" autoheight></textarea></td>
+            <td><textarea name="sjbh21" id="sjbh21" autoheight></textarea></td>
+            <td><textarea name="sjbh22" id="sjbh22" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td rowspan="13" class="setW">拉伸试验</td>
+            <td class="setW2">公称直径a(mm)</td>
+            <td colspan="2"><input type="text" id="gczj1" name="gczj1"></td>
+            <td colspan="2"><input type="text" id="gczj2" name="gczj2"></td>
+          </tr>
+          <tr>
+            <td>公称截面面积S(mm)</td>
+            <td colspan="2"><input type="text" id="gcjmmj1" name="gcjmmj1"></td>
+            <td colspan="2"><input type="text" id="gcjmmj2" name="gcjmmj2"></td>
+          </tr>
+          <tr>
+            <td>原始标距<span class="gs">L<sub>0</sub></span>(mm)</td>
+            <td colspan="2"><input type="text" id="ysbj1" name="ysbj1"></td>
+            <td colspan="2"><input type="text" id="ysbj2" name="ysbj2"></td>
+          </tr>
+          <tr>
+            <td>断后标距<span class="gs">L<sub>1</sub></span>(mm)</td>
+            <td><input type="text" id="dhbj11" name="dhbj11"></td>
+            <td><input type="text" id="dhbj12" name="dhbj12"></td>
+            <td><input type="text" id="dhbj21" name="dhbj21"></td>
+            <td><input type="text" id="dhbj22" name="dhbj22"></td>
+          </tr>
+          <tr>
+            <td>屈服力<span class="gs">F<sub>s</sub></span>(kN)</td>
+            <td><input type="text" id="qfl11" name="qfl11"></td>
+            <td><input type="text" id="qfl12" name="qfl12"></td>
+            <td><input type="text" id="qfl21" name="qfl21"></td>
+            <td><input type="text" id="qfl22" name="qfl22"></td>
+          </tr>
+          <tr>
+            <td>屈服点<span class="gs">σ<sub>s</sub></span>(MPa)</td>
+            <td><input type="text" id="qfd11" name="qfd11"></td>
+            <td><input type="text" id="qfd12" name="qfd12"></td>
+            <td><input type="text" id="qfd21" name="qfd21"></td>
+            <td><input type="text" id="qfd22" name="qfd22"></td>
+          </tr>
+          <tr>
+            <td>拉断最大力<span class="gs">F<sub>b</sub></span>(kN)</td>
+            <td><input type="text" id="ldzdl11" name="ldzdl11"></td>
+            <td><input type="text" id="ldzdl12" name="ldzdl12"></td>
+            <td><input type="text" id="ldzdl21" name="ldzdl21"></td>
+            <td><input type="text" id="ldzdl22" name="ldzdl22"></td>
+          </tr>
+          <tr>
+            <td>抗拉强度<span class="gs">σ<sub>b</sub></span>(MPa)</td>
+            <td><input type="text" id="klqd11" name="klqd11"></td>
+            <td><input type="text" id="klqd12" name="klqd12"></td>
+            <td><input type="text" id="klqd21" name="klqd21"></td>
+            <td><input type="text" id="klqd22" name="klqd22"></td>
+          </tr>
+          <tr>
+            <td>伸长率δ(%)</td>
+            <td><input type="text" id="scl11" name="scl11"></td>
+            <td><input type="text" id="scl12" name="scl12"></td>
+            <td><input type="text" id="scl21" name="scl21"></td>
+            <td><input type="text" id="scl22" name="scl22"></td>
+          </tr>
+          <tr>
+            <td>最大力总伸长率$A_{gt}$
+              <!--<span class="gs">A<sub>gt</sub></span>-->
+            </td>
+            <td><input type="text" id="zdlzscl11" name="zdlzscl11"></td>
+            <td><input type="text" id="zdlzscl12" name="zdlzscl12"></td>
+            <td><input type="text" id="zdlzscl21" name="zdlzscl21"></td>
+            <td><input type="text" id="zdlzscl22" name="zdlzscl22"></td>
+          </tr>
+          <tr>
+            <td>拉断处位置描述</td>
+            <td><textarea name="ldcwzms11" id="ldcwzms11" autoheight></textarea></td>
+            <td><textarea name="ldcwzms12" id="ldcwzms12" autoheight></textarea></td>
+            <td><textarea name="ldcwzms21" id="ldcwzms21" autoheight></textarea></td>
+            <td><textarea name="ldcwzms22" id="ldcwzms22" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>实测拉伸强度与实测屈服强度之比$R^0_m/R^0_{el}$ $\frac{R^0_m}{R^0_{el}}$</td>
+            <td><input type="text" id="qiangqubi11" name="qiangqubi11"></td>
+            <td><input type="text" id="qiangqubi12" name="qiangqubi12"></td>
+            <td><input type="text" id="qiangqubi21" name="qiangqubi21"></td>
+            <td><input type="text" id="qiangqubi22" name="qiangqubi22"></td>
+          </tr>
+          <tr>
+            <td>实测屈服强度与规定的屈服强度特征值之比<span class="gs">R<sub>el</sub><sup>0</sup></span>/<span class="gs">R<sub>el</sub></span></td>
+            <td><input type="text" id="ququbi11" name="ququbi11"></td>
+            <td><input type="text" id="ququbi12" name="ququbi12"></td>
+            <td><input type="text" id="ququbi21" name="ququbi21"></td>
+            <td><input type="text" id="ququbi22" name="ququbi22"></td>
+          </tr>
+          <tr>
+            <td rowspan="4">弯曲试验</td>
+            <td>弯曲角度a(°)</td>
+            <td colspan="2"><input type="text" id="wqjd1" name="wqjd1"></td>
+            <td colspan="2"><input type="text" id="wqjd2" name="wqjd2"></td>
+          </tr>
+          <tr>
+            <td>弯曲压头直径d(mm)</td>
+            <td colspan="2"><input type="text" id="wqytzj1" name="wqytzj1"></td>
+            <td colspan="2"><input type="text" id="wqytzj2" name="wqytzj2"></td>
+          </tr>
+          <tr>
+            <td>弯曲外表面描述</td>
+            <td><textarea name="wqwbmms11" id="wqwbmms11" autoheight></textarea></td>
+            <td><textarea name="wqwbmms12" id="wqwbmms12" autoheight></textarea></td>
+            <td><textarea name="wqwbmms21" id="wqwbmms21" autoheight></textarea></td>
+            <td><textarea name="wqwbmms22" id="wqwbmms22" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>弯曲结果</td>
+            <td><textarea name="wqjg11" id="wqjg11" autoheight></textarea></td>
+            <td><textarea name="wqjg12" id="wqjg12" autoheight></textarea></td>
+            <td><textarea name="wqjg21" id="wqjg21" autoheight></textarea></td>
+            <td><textarea name="wqjg22" id="wqjg22" autoheight></textarea></td>
+          </tr>
+        </table>
+        <table class="layui-table next">
+          <tr>
+            <td rowspan="6" class="setW">钢筋外观尺寸重量偏差</td>
+            <td class="setW2">实测内径a(mm)</td>
+            <td><input type="text" id="scnj1" name="scnj1"></td>
+            <td><input type="text" id="scnj2" name="scnj2"></td>
+            <td><input type="text" id="scnj3" name="scnj3"></td>
+            <td><input type="text" id="scnj4" name="scnj4"></td>
+            <td><input type="text" id="scnj5" name="scnj5"></td>
+          </tr>
+          <tr>
+            <td>内径偏差(mm)</td>
+            <td><input type="text" id="njpc1" name="njpc1"></td>
+            <td><input type="text" id="njpc2" name="njpc2"></td>
+            <td><input type="text" id="njpc3" name="njpc3"></td>
+            <td><input type="text" id="njpc4" name="njpc4"></td>
+            <td><input type="text" id="njpc5" name="njpc5"></td>
+          </tr>
+          <tr>
+            <td>试样总长度(m)</td>
+            <td colspan="5"><input type="text" id="syzcd" name="syzcd"></td>
+          </tr>
+          <tr>
+            <td>实测试验总重量(kg)</td>
+            <td colspan="5"><input type="text" id="syzzl" name="syzzl"></td>
+          </tr>
+          <tr>
+            <td>理论重量(kg/m)</td>
+            <td colspan="5"><input type="text" id="llzl" name="llzl"></td>
+          </tr>
+          <tr>
+            <td>重量偏差(%)</td>
+            <td colspan="5"><input type="text" id="zlpc" name="zlpc"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="tableRemark"></div>
+      <input type="hidden" name="sampleGangJinZhongLei" id="sampleGangJinZhongLei" />
+    </div>
+  </form>
+</body>
+<script>
+  // base.remarkType = '1';
+  initTable('head', 'tail', function () {
+    $('#tiTableName').text('钢筋试验');
+  });
+
+  // 截面积
+  fixWhenBlur(['gczj'], null, jmj);
+  function jmj() {
+    for (let i = 1; i <= 2; i++) {
+      let d = $('#gczj' + i).val();
+      let res = '';
+      if (validNum(d)) {
+        res = PI * d * d / 4;
+        res = fix(res);
+      }
+      $('#gcjmmj' + i).val(res);
+    }
+
+    qd();
+
+    // 面积修约
+    function fix(s) {
+      let z = Math.floor(s);
+      if (z < 100) {
+        return s.toRound(2);
+      } else if (z < 1000) {
+        return s.toRound(1);
+      } else if (z < 10000) {
+        return Math.ceil(s);
+      } else {
+        return s;
+      }
+    }
+  }
+
+  // 强度
+  fixWhenBlur(['qfl', 'ldzdl'], 2, qd);
+  function qd() {
+    for (let i = 1; i <= 2; i++) {
+      let S = $('#gcjmmj' + i).val();
+      for (let j = 1; j <= 2; j++) {
+        let qfl = $('#qfl' + i + j).val(), ldl = $('#ldzdl' + i + j).val();
+        let res = '';
+        if (validNum(qfl, S)) {
+          res = qfl / S * 1000;
+          res = res.toRound(1);
+        }
+        $('#qfd' + i + j).val(res);
+
+        res = '';
+        if (validNum(ldl, S)) {
+          res = ldl / S * 1000;
+          res = res.toRound(1);
+        }
+        $('#klqd' + i + j).val(res);
+      }
+    }
+
+    tzz();
+  }
+
+  // 力学特征值
+  function tzz() {
+    let gjzl = $('#sampleGangJinZhongLei').val();
+    for (let i = 1; i <= 2; i++) {
+      for (let j = 1; j <= 2; j++) {
+        let qfqd = $('#qfd' + i + j).val(), klqd = $('#klqd' + i + j).val();
+        let res = '';
+        if (validNum(qfqd, klqd) && gjzl.indexOf('E') != -1) {
+          // 强屈比
+          res = (klqd / qfqd).toRound(2);
+        }
+        $('#qiangqubi' + i + j).val(res);
+
+        res = '';
+        if (validNum(qfqd) &&  /([456]\d+)E$/.test(gjzl)) {
+          let tzz = RegExp.$1;
+          res = (qfqd / tzz).toRound(2);
+        }
+        $('#ququbi' + i + j).val(res);
+      }
+    }
+  }
+
+  // 伸长率
+  fixWhenBlur(['ysbj', 'dhbj'], 2, scl);
+  function scl() {
+    for (let i = 1; i <= 2; i++) {
+      let ysbj = $('#ysbj' + i).val();
+      for (let j = 1; j <= 2; j++) {
+        let dhbj = $('#dhbj' + i + j).val();
+        let res = '';
+        if (validNum(ysbj, dhbj)) {
+          res = (dhbj - ysbj) / ysbj;
+          res = res.toRound(1);
+        }
+        $('#scl' + i + j).val(res);
+      }
+    }
+  }
+
+  // 最大力总延长率
+  fixWhenBlur(['ysbj', 'dhbj', 'ldzdl'], 2, ycl);
+  function ycl() {
+    let ml = 200000;
+    for (let i = 1; i <= 2; i++) {
+      let ysbj = $('#ysbj' + i).val();
+      for (let j = 1; j <= 2; j++) {
+        let dhbj = $('#dhbj' + i + j).val(), kl = $('#ldzdl' + i + j).val();
+        let res = '';
+        if (validNum(ysbj, dhbj, kl)) {
+          res = (dhbj - ysbj) / dhbj * 100 + (kl / ml) * 100;
+          res = res.toRound(1);
+        }
+        $('#zdlzscl' + i + j).val(res);
+      }
+    }
+  }
+
+  // 重量偏差
+  fixWhenBlur(['syzcd', 'syzzl'], null, zlpc);
+  function zlpc() {
+    let obj = getTableRecord('M_PARAM_HEIGHT', [{key: 'ZhiJing', value: $('#sampleGangJinZhiJing').val()}]);
+    $('#llzl').val(obj.Zhongliang || '');
+
+    let L = $('#syzcd').val(), M = $('#llzl').val(), m = $('#syzzl').val();
+    let res = '';
+    if (validNum(L, M, m)) {
+      res = (M - L * m) / (L * m) * 100;
+      res = res.toRound(1);
+    }
+    $('#zlpc').val(res);
+  }
+
+</script>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css" />
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <!-- 仪器设备表 -->
+        <table class="layui-table">
+          <tr>
+            <td rowspan="5" style="width: 80px;">仪器设备及环境条件</td>
+            <td style="width: 140px;">仪器设备名称</td>
+            <td style="width: 50px;">型号</td>
+            <td style="width: 50px;">管理编号</td>
+            <td style="width: 50px;">示值范围</td>
+            <td style="width: 50px;">分辨力</td>
+            <td style="width: 50px;">温度(C°)</td>
+            <td style="width: 80px;">相对湿度(%)</td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc1" id="yqsbmc1" autoheight></textarea></td>
+            <td><textarea name="xh1" id="xh1" autoheight></textarea></td>
+            <td><textarea name="glbh1" id="glbh1" autoheight></textarea></td>
+            <td><textarea name="szfw1" id="szfw1" autoheight></textarea></td>
+            <td><textarea name="fbl1" id="fbl1" autoheight></textarea></td>
+            <td rowspan="4"><input type="text" name="wd" id="wd"></td>
+            <td rowspan="4"><input type="text" name="xdsd" id="xdsd"></td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc2" id="yqsbmc2" autoheight></textarea></td>
+            <td><textarea name="xh2" id="xh2" autoheight></textarea></td>
+            <td><textarea name="glbh2" id="glbh2" autoheight></textarea></td>
+            <td><textarea name="szfw2" id="szfw2" autoheight></textarea></td>
+            <td><textarea name="fbl2" id="fbl2" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc3" id="yqsbmc3" autoheight></textarea></td>
+            <td><textarea name="xh3" id="xh3" autoheight></textarea></td>
+            <td><textarea name="glbh3" id="glbh3" autoheight></textarea></td>
+            <td><textarea name="szfw3" id="szfw3" autoheight></textarea></td>
+            <td><textarea name="fbl3" id="fbl3" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="yqsbmc4" id="yqsbmc4" autoheight></textarea></td>
+            <td><textarea name="xh4" id="xh4" autoheight></textarea></td>
+            <td><textarea name="glbh4" id="glbh4" autoheight></textarea></td>
+            <td><textarea name="szfw4" id="szfw4" autoheight></textarea></td>
+            <td><textarea name="fbl4" id="fbl4" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td>样品状态描述</td>
+            <td colspan="3"><textarea name="ztms" id="ztms" autoheight></textarea></td>
+            <td colspan="2">采用标准</td>
+            <td colspan="2"><textarea name="cybz" id="cybz" autoheight></textarea></td>
+          </tr>
+        </table>
+        <!-- 含水量表 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="3" style="font-weight: bold;">（1）含水量</td>
+          </tr>
+          <tr>
+            <td style="width: 200px;">烘干前式样的质量m<sub>1</sub>(g)</td>
+            <td style="width: 200px;">烘干后式样的质量m<sub>0</sub>(g)</td>
+            <td style="width: 300px;">含水率&omega;(%):&omega;=[(m<sub>1</sub>-m<sub>0</sub>)/m<sub>0</sub>]x100</td>
+          </tr>
+          <tr>
+            <td><textarea autoheight id="hgq" name="hgq"></textarea></td>
+            <td><textarea autoheight id="hgh" name="hgh"></textarea></td>
+            <td><textarea autoheight id="hsl" name="hsl"></textarea></td>
+          </tr>
+        </table>
+        <!-- 烧失量表 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="4" style="font-weight: bold;">（2）烧失量</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 180px;">试样质量m(g)</td>
+            <td rowspan="2" style="width: 180px;">灼烧后试样质量m<sub>1</sub>(g)</td>
+            <td colspan="2">烧失量X(%):X=[(m-m<sub>1</sub>)/m]x100</td>
+          </tr>
+          <tr>
+            <td style="width: 160px;">单值</td>
+            <td style="width: 160px;">平均值</td>
+          </tr>
+          <tr>
+            <td><textarea autoheight id="syzl1" name="syzl1"></textarea></td>
+            <td><textarea autoheight id="zshsyzl1" name="zshsyzl1"></textarea></td>
+            <td><textarea autoheight id="ssldz1" name="ssldz1"></textarea></td>
+            <td rowspan="2"><input type="text" id="sslpjz" name="sslpjz"></td>
+          </tr>
+          <tr>
+            <td><textarea autoheight id="syzl2" name="syzl2"></textarea></td>
+            <td><textarea autoheight id="zshsyzl2" name="zshsyzl2"></textarea></td>
+            <td><textarea autoheight id="ssldz2" name="ssldz2"></textarea></td>
+          </tr>
+        </table>
+        <!-- 三氧化硫 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="5" style="font-weight: bold;">（3）三氧化硫</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 60px;">次数</td>
+            <td rowspan="2" style="width: 120px;">试样质量m(g)</td>
+            <td rowspan="2" style="width: 180px;">灼烧后沉淀的质量m<sub>1</sub>(g)</td>
+            <td colspan="2">三氧化硫含量X<sub>SO<sub>3</sub></sub>(%):X<sub>SO<sub>3</sub></sub>=(m<sub>1</sub>x0.343/m)x100</td>
+          </tr>
+          <tr>
+            <td style="width: 160px;">单值</td>
+            <td style="width: 160px;">平均值</td>
+          </tr>
+          <tr>
+            <td><textarea name="cs1" id="cs1" autoheight></textarea></td>
+            <td><textarea name="syhlsyzl1" id="syhlsyzl1" autoheight></textarea></td>
+            <td><textarea name="cddzl1" id="cddzl1" autoheight></textarea></td>
+            <td><textarea name="syhldz1" id="syhldz1" autoheight></textarea></td>
+            <td rowspan="2"><input type="text" id="sshljz" name="sshljz"></td>
+          </tr>
+          <tr>
+            <td><textarea name="cs2" id="cs2" autoheight></textarea></td>
+            <td><textarea name="syhlsyzl2" id="syhlsyzl2" autoheight></textarea></td>
+            <td><textarea name="cddzl2" id="cddzl2" autoheight></textarea></td>
+            <td><textarea name="syhldz2" id="syhldz2" autoheight></textarea></td>
+          </tr>
+        </table>
+        <!-- 需水量比 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="7" style="font-weight: bold;">（4）需水量比</td>
+          </tr>
+          <tr>
+            <td>胶砂种类</td>
+            <td>水泥(g)</td>
+            <td>标准砂(g)</td>
+            <td>粉煤灰(g)</td>
+            <td colspan="2">需水量(mL)</td>
+            <td>需水量比L<sub>1</sub>/G(%)</td>
+          </tr>
+          <tr>
+            <td>对比胶砂</td>
+            <td>250</td>
+            <td>750</td>
+            <td>-</td>
+            <td>G(初始可用125)</td>
+            <td><textarea id="xsldb" name="xsldb" autoheight></textarea></td>
+            <td rowspan="2"><input type="text" name="xslb" id="xslb"></td>
+          </tr>
+          <tr>
+            <td>实验胶砂</td>
+            <td>175</td>
+            <td>750</td>
+            <td>75</td>
+            <td>L<sub>1</sub></td>
+            <td><textarea id="xslsy" name="xslsy" autoheight></textarea></td>
+          </tr>
+        </table>
+        <!-- 细度 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="5" style="font-weight: bold;">（5）细度</td>
+          </tr>
+          <tr>
+            <td>称取样式的质量G(g)</td>
+            <td>筛余物的质量G<sub>s</sub>(g)</td>
+            <td>45&mu;m方孔筛筛余百分数F(%)</td>
+            <td>修正系数K</td>
+            <td>修正后筛余百分数F<sub>C</sub>(%)<br/>F<sub>C</sub>=F·K</td>
+          </tr>
+          <tr>
+            <td><textarea name="cqyzl" id="cqyzl" autoheight></textarea></td>
+            <td><textarea name="sywzl" id="sywzl" autoheight></textarea></td>
+            <td><textarea name="fk" id="fk" autoheight></textarea></td>
+            <td><textarea name="xzxs" id="xzxs" autoheight></textarea></td>
+            <td><textarea name="sybfs" id="sybfs" autoheight></textarea></td>
+          </tr>
+        </table>
+        <!-- 游离氧化钙含量 -->
+        <table class="layui-table next">
+          <tr>
+            <td colspan="6" style="font-weight: bold;">（6）游离氧化钙含量</td>
+          </tr>
+          <tr>
+            <td rowspan="2">次数</td>
+            <td rowspan="2">水泥式样质量(g)</td>
+            <td rowspan="2">每毫升盐酸标准滴定溶液相当于氧化钙的毫克数T<sub>C<sub>a</sub>O</sub>(mg/mL)</td>
+            <td rowspan="2">满定时消耗盐酸标准滴定溶液的体积V(ml)</td>
+            <td colspan="2">游离氧化钙含量X<sub>fC<sub>a</sub>O</sub>(%)<br/>X<sub>fC<sub>a</sub>O</sub>=(T<sub>C<sub>a</sub>O</sub>xVx0.1)/m</td>
+          </tr>
+          <tr>
+            <td>单值</td>
+            <td>平均值</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><textarea name="snsyzl1" id="snsyzl1" autoheight></textarea></td>
+            <td><textarea name="hks1" id="hks1" autoheight></textarea></td>
+            <td><textarea name="rytj1" id="rytj1" autoheight></textarea></td>
+            <td><textarea name="yhgdz1" id="yhgdz1" autoheight></textarea></td>
+            <td rowspan="2"><input type="text" name="yhgjz" id="yhgjz"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><textarea name="snsyzl2" id="snsyzl2" autoheight></textarea></td>
+            <td><textarea name="hks2" id="hks2" autoheight></textarea></td>
+            <td><textarea name="rytj2" id="rytj2" autoheight></textarea></td>
+            <td><textarea name="yhgdz2" id="yhgdz2" autoheight></textarea></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  initTable('head', 'tail', function () {
+    $('#tiTableName').text('混凝土用粉煤灰实验记录(一)');
+    $('#tiCustomTableNum').text('铁建试录016');
+    $('.table-noborder').append('<tr><td>样品产地</td><td><textarea name="yangpinchandi" id="yangpinchandi" autoheight></textarea></td><td>代表数值</td><td><textarea name="daibiaoshuzhi" id="daibiaoshuzhi" autoheight></textarea></td></tr><tr><td>规格种类</td><td><textarea name="guigezhonglei" id="guigezhonglei" autoheight></textarea></td><td>试验日期</td><td><textarea name="shiyanriqi" id="shiyanriqi" autoheight></textarea></td></tr>');
+  });
+
+  /* 计算含水率 */
+  fixWhenBlur(['hgq', 'hgh'], null, hsl);
+  function hsl() {
+    let a = $('#hgq').val();
+    let b = $('#hgh').val();
+    if (a != '' && b != '') {
+      let c = (a - b) / b * 100;
+      c = toFixedEvenRound(c, 2);
+      $('#hsl').val(c);
+    }
+  }
+
+  /* 计算烧失量 */
+  fixWhenBlur(['syzl', 'zshsyzl'], null, ssl);
+  function ssl() {
+    let sum = 0, num = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#syzl' + i).val();
+      let b = $('#zshsyzl' + i).val();
+      if (validNum(a, b)) {
+        let c = (parseFloat(a) - parseFloat(b)) / parseFloat(a) * 100;
+        c = toFixedEvenRound(c, 2);
+        $('#ssldz' + i).val(c);
+        sum += parseFloat(c);
+        num++;
+      }else{
+        $('#ssldz' + i).val("");
+      }
+    }
+    //计算平均值
+    if (num > 0) {
+      let avg = sum / num;
+      $('#sslpjz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#sslpjz').val('');
+		}
+  }
+
+  /* 计算三氧化硫 */
+  fixWhenBlur(['syhlsyzl', 'cddzl'], null, syhl);
+  function syhl() {
+    let sum = 0, num = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#syhlsyzl' + i).val();
+      let b = $('#cddzl' + i).val();
+      if (a != '' && b != '') {
+        let c = (parseFloat(b) * 0.343 / parseFloat(a)) * 100;
+        c = toFixedEvenRound(c, 2);
+        $('#syhldz' + i).val(c);
+        sum += parseFloat(c);
+        num++;
+      }else{
+        $('#syhldz' + i).val("");
+      }
+    }
+    //计算平均值
+    if (num > 0) {
+      let avg = sum / num;
+      $('#sshljz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#sshljz').val('');
+		}
+  }
+
+  /* 计算需水量比 */
+  fixWhenBlur(['xsldb', 'xslsy'], null, sslb);
+  function sslb() {
+    let a = $('#xsldb').val();
+    let b = $('#xslsy').val();
+    if (a != '' && b != '') {
+      let c = parseFloat(b) / parseFloat(a);
+      $('#xslb').val(toFixedEvenRound(c, 2));
+    }
+  }
+
+  /* 计算细度 */
+  fixWhenBlur(['fk', 'xzxs'], null, jsxd);
+  function jsxd() {
+    let a = $('#fk').val();
+    let b = $('#xzxs').val();
+    if (a != '' && b != '') {
+      let c = parseFloat(b) * parseFloat(a);
+      $('#sybfs').val(toFixedEvenRound(c, 2));
+    }
+  }
+
+  /* 计算游离氧化钙 */
+  fixWhenBlur(['snsyzl', 'hks', 'rytj'], null, ylyhg);
+  function ylyhg() {
+    let sum = 0, num = 0;
+    for (let i = 1; i <= 2; i++) {
+      let a = $('#snsyzl' + i).val();
+      let b = $('#hks' + i).val();
+      let c = $('#rytj' + i).val();
+      if (a != '' && b != '' && c != '') {
+        let d = (parseFloat(b) * parseFloat(c) * 0.1) / parseFloat(a);
+        d = toFixedEvenRound(d, 2);
+        $('#yhgdz' + i).val(d);
+        sum += parseFloat(d);
+        num++;
+      }else{
+        $('#yhgdz' + i).val("");
+      }
+    }
+    //计算平均值
+    if (num > 0) {
+      let avg = sum / num;
+      $('#yhgjz').val(toFixedEvenRound(avg, 2));
+		} else {
+      $('#yhgjz').val('');
+		}
+  }
+</script>
+
+</html>

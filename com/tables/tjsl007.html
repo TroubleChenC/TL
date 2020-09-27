@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="../../plugins/layui/css/layui.css"
+      media="all"
+    />
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+      }});
+    </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+      .tableContent td {
+        min-height: 10px;
+        line-height: 15px;
+        height: 25px;
+      }
+      .tableContent tr:nth-child(2) td {
+        height: 50px;
+      }
+      .tableContent tr:nth-child(3) {
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 细骨料试验记录（四） -->
+    <form id="form" action="" method="post" onsubmit="return false;">
+      <div class="paperA4 paperA4-vertical">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+          <!-- 氯离子含量 -->
+          <table class="layui-table">
+            <tr>
+              <td colspan="6">(12)氯离子含量</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                硝酸银标准溶液浓度 <br />
+                $C_{AgNO_{3}}$ <br />(mol/L)
+              </td>
+              <td rowspan="2" style="width: 70px">
+                样品滴定时消耗硝酸银标准溶液体积$V_{1}$(mL)
+              </td>
+              <td rowspan="2" style="width: 70px">
+                空白试验时消耗硝酸银标准溶液体积$V_{2}$(mL)
+              </td>
+              <td rowspan="2">试样质量m(g)</td>
+              <td colspan="2">氯离子含量$w_{Cl}$(%)</td>
+            </tr>
+            <tr>
+              <td>
+                $w_{Cl}=\frac{C_{AgNO_{3}}(V_{1}-V_{2})*0.0355*10}{m}*100$
+              </td>
+              <td>平均值</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="bzrynd1" id="bzrynd1" /></td>
+              <td><input type="text" name="ddxhtj1" id="ddxhtj1" /></td>
+              <td><input type="text" name="kbxhtj1" id="kbxhtj1" /></td>
+              <td><input type="text" name="syzl1" id="syzl1" /></td>
+              <td><input type="text" readonly name="llzhl1" id="llzhl1" /></td>
+              <td rowspan="2">
+                <input type="text" readonly name="llzpjz" id="llzpjz" />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" name="bzrynd2" id="bzrynd2" /></td>
+              <td><input type="text" name="ddxhtj2" id="ddxhtj2" /></td>
+              <td><input type="text" name="kbxhtj2" id="kbxhtj2" /></td>
+              <td><input type="text" name="syzl2" id="syzl2" /></td>
+              <td><input type="text" readonly name="llzhl2" id="llzhl2" /></td>
+            </tr>
+          </table>
+          <!-- 含水率 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">(13)含水率</td>
+            </tr>
+            <tr>
+              <td rowspan="2">容器质量$m_{1}$(g)</td>
+              <td rowspan="2">烘干前试样+容器质量$m_{2}$(g)</td>
+              <td rowspan="2">烘干后试样+容器质量$m_{3}$(g)</td>
+              <td colspan="2">含水率$w_{wc}$(%)</td>
+            </tr>
+            <tr>
+              <td>$w_{wc}=\frac{m_{2}-m_{3}}{m_{3}-m_{1}}*100$</td>
+              <td>平均值</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="rqzl1" id="rqzl1" /></td>
+              <td><input type="text" name="qsyrqzl1" id="qsyrqzl1" /></td>
+              <td><input type="text" name="hsyrqzl1" id="hsyrqzl1" /></td>
+              <td><input type="text" readonly name="hsl1" id="hsl1" /></td>
+              <td rowspan="2">
+                <input type="text" readonly name="hslpjz" id="hslpjz" />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" name="rqzl2" id="rqzl2" /></td>
+              <td><input type="text" name="qsyrqzl2" id="qsyrqzl2" /></td>
+              <td><input type="text" name="hsyrqzl2" id="hsyrqzl2" /></td>
+              <td><input type="text" readonly name="hsl2" id="hsl2" /></td>
+            </tr>
+          </table>
+          <!-- 吸水率 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">(14)吸水率</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                容器质量<br />
+                $m_{1}$(g)
+              </td>
+              <td rowspan="2">饱和面干试样质量(g)</td>
+              <td rowspan="2">烘干试样+容器质量$m_{2}$(g)</td>
+              <td colspan="2">吸水率$w_{wa}$(%)</td>
+            </tr>
+            <tr>
+              <td>$w_{wa}=\frac{500-(m_{2}-m_{1})}{m_{2}-m_{1}}*100$</td>
+              <td>平均值</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="xs_rqzl1" id="xs_rqzl1" /></td>
+              <td>500</td>
+              <td><input type="text" name="syrqzl1" id="syrqzl1" /></td>
+              <td><input type="text" readonly name="xsl1" id="xsl1" /></td>
+              <td rowspan="2">
+                <input type="text" readonly name="xslpjz" id="xslpjz" />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" name="xs_rqzl2" id="xs_rqzl2" /></td>
+              <td>500</td>
+              <td><input type="text" name="syrqzl2" id="syrqzl2" /></td>
+              <td><input type="text" readonly name="xsl2" id="xsl2" /></td>
+            </tr>
+          </table>
+          <!-- 三氧化硫含量 -->
+          <table class="layui-table next">
+            <tr>
+              <td colspan="5">(15)三氧化硫含量</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                粉磨试样质量<br />
+                m(g)
+              </td>
+              <td rowspan="2">坩埚质量$m_{1}$(g)</td>
+              <td rowspan="2">800℃灼烧30min后沉淀物+坩埚质量$m_{2}$(g)</td>
+              <td colspan="2">三氧化硫含量$w_{SO_{3}}$(%)</td>
+            </tr>
+            <tr>
+              <td>$w_{wa}=\frac{m_{2}-m_{1}*0.343}{m}*100$</td>
+              <td>平均值</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="fmsyzl1" id="fmsyzl1" /></td>
+              <td><input type="text" name="ggzl1" id="ggzl1" /></td>
+              <td><input type="text" name="cdwggzl1" id="cdwggzl1" /></td>
+              <td>
+                <input type="text" readonly name="syhlhl1" id="syhlhl1" />
+              </td>
+              <td rowspan="2">
+                <input type="text" readonly name="syhlhlpjz" id="syhlhlpjz" />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" name="fmsyzl2" id="fmsyzl2" /></td>
+              <td><input type="text" name="ggzl2" id="ggzl2" /></td>
+              <td><input type="text" name="cdwggzl2" id="cdwggzl2" /></td>
+              <td>
+                <input type="text" readonly name="syhlhl2" id="syhlhl2" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tableRemark"></div>
+      </div>
+    </form>
+  </body>
+  <script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('', '', function () {});
+    // 计算函数
+    // 计算氯离子含量
+    fixWhenBlur(['bzrynd', 'ddxhtj', 'kbxhtj', 'syzl'], null, llzhl);
+    function llzhl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let bzrynd = $('#bzrynd' + i).val();
+        let ddxhtj = $('#ddxhtj' + i).val();
+        let kbxhtj = $('#kbxhtj' + i).val();
+        let syzl = $('#syzl' + i).val();
+        let res = '';
+        if (validNum(bzrynd, ddxhtj, kbxhtj, syzl)) {
+          res = (bzrynd * (kbxhtj - ddxhtj) * 0.0355 * 10) / syzl;
+          res = res.toRound(1);
+        }
+        $('#llzhl' + i).val(res);
+      }
+      // 计算氯离子含量平均值
+      avg = getAvgByRange('llzhl', 1, 2);
+      avg = avg.toRound(1);
+
+      $('#llzpjz').val(avg);
+    }
+    // 计算含水率
+    fixWhenBlur(['rqzl', 'qsyrqzl', 'hsyrqzl'], null, jshsl);
+    function jshsl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let rqzl = $('#rqzl' + i).val();
+        let qsyrqzl = $('#qsyrqzl' + i).val();
+        let hsyrqzl = $('#hsyrqzl' + i).val();
+        let res = '';
+        if (validNum(rqzl, qsyrqzl, hsyrqzl)) {
+          res = ((qsyrqzl - hsyrqzl) / (hsyrqzl - rqzl)) * 100;
+          res = res.toRound(1);
+        }
+        $('#hsl' + i).val(res);
+      }
+      // 计算含水率平均值
+      avg = getAvgByRange('hsl', 1, 2);
+      avg = avg.toRound(1);
+
+      $('#hslpjz').val(avg);
+    }
+    // 计算吸水率
+    fixWhenBlur(['xs_rqzl', 'syrqzl'], 1, jsxsl);
+    function jsxsl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let xs_rqzl = $('#xs_rqzl' + i).val();
+        let syrqzl = $('#syrqzl' + i).val();
+        let res = '';
+        if (validNum(xs_rqzl, syrqzl)) {
+          res = ((500 - (syrqzl - xs_rqzl)) / (syrqzl - xs_rqzl)) * 100;
+          res = res.toRound(1);
+        }
+        $('#xsl' + i).val(res);
+      }
+      // 计算吸水率平均值
+      avg = getAvgByRange('xsl', 1, 2);
+      avg = avg.toRound(1);
+      $('#xslpjz').val(avg);
+    }
+    // 计算三氧化硫含量
+    fixWhenBlur(['fmsyzl', 'ggzl', 'cdwggzl'], null, jssyhl);
+    function jssyhl() {
+      let avg = '';
+      for (var i = 1; i <= 2; i++) {
+        let fmsyzl = $('#fmsyzl' + i).val();
+        let ggzl = $('#ggzl' + i).val();
+        let cdwggzl = $('#cdwggzl' + i).val();
+        let res = '';
+        if (validNum(fmsyzl, ggzl, cdwggzl)) {
+          res = (((cdwggzl - ggzl) * 0.343) / fmsyzl) * 100;
+          res = res.toRound(1);
+        }
+        $('#syhlhl' + i).val(res);
+      }
+      // 计算三氧化硫含量平均值
+      avg = getAvgByRange('syhlhl', 1, 2);
+      avg = avg.toRound(1);
+
+      $('#syhlhlpjz').val(avg);
+    }
+  </script>
+</html>

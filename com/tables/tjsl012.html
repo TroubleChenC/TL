@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css"/>
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+        .a1 td{
+            width: 15px;
+        }
+    </style>
+</head>
+<body>
+<form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-horizontal">
+        <div class="tableHeader"></div>
+        <div class="tableContent">
+            <table class="layui-table">
+                <tr>
+                    <td colspan="19">细骨料样品碱活性矿物分析</td>
+                </tr>
+                <tr>
+                    <td style="width: 165px;">公称粒径范围(mm)</td>
+                    <td colspan="3">5.00~2.50</td>
+                    <td colspan="3">2.50~1.25</td>
+                    <td colspan="3">1.25~0.63</td>
+                    <td colspan="3">0.63~0.315</td>
+                    <td colspan="3">0.315~0.16</td>
+                    <td colspan="3"><0.16</td>
+                </tr>
+                <tr>
+                    <td>分级样品质量(g)</td>
+                    <td colspan="3"><textarea name="fjypzzl1" id="fjypzzl1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjypzzl2" id="fjypzzl2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjypzzl3" id="fjypzzl3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjypzzl4" id="fjypzzl4" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjypzzl5" id="fjypzzl5" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjypzzl6" id="fjypzzl6" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td>分计筛余百分率(%)</td>
+                    <td colspan="3"><textarea name="fjsybfl1" id="fjsybfl1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjsybfl2" id="fjsybfl2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjsybfl3" id="fjsybfl3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjsybfl4" id="fjsybfl4" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjsybfl5" id="fjsybfl5" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="fjsybfl6" id="fjsybfl6" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td>样品总质量(g)</td>
+                    <td colspan="18"><textarea name="ypzzl" id="ypzzl" autoheight></textarea></td>
+                </tr>
+                <tr class="a1">
+                    <td>主要矿物成分</td>
+                    <td><textarea name="zykwcf1" id="zykwcf1" autoheight></textarea></td>
+                    <td><textarea name="zykwcf2" id="zykwcf2" autoheight></textarea></td>
+                    <td><textarea name="zykwcf3" id="zykwcf3" autoheight></textarea></td>
+                    <td><textarea name="zykwcf4" id="zykwcf4" autoheight></textarea></td>
+                    <td><textarea name="zykwcf5" id="zykwcf5" autoheight></textarea></td>
+                    <td><textarea name="zykwcf6" id="zykwcf6" autoheight></textarea></td>
+                    <td><textarea name="zykwcf7" id="zykwcf7" autoheight></textarea></td>
+                    <td><textarea name="zykwcf8" id="zykwcf8" autoheight></textarea></td>
+                    <td><textarea name="zykwcf9" id="zykwcf9" autoheight></textarea></td>
+                    <td><textarea name="zykwcf10" id="zykwcf10" autoheight></textarea></td>
+                    <td><textarea name="zykwcf11" id="zykwcf11" autoheight></textarea></td>
+                    <td><textarea name="zykwcf12" id="zykwcf12" autoheight></textarea></td>
+                    <td><textarea name="zykwcf13" id="zykwcf13" autoheight></textarea></td>
+                    <td><textarea name="zykwcf14" id="zykwcf14" autoheight></textarea></td>
+                    <td><textarea name="zykwcf15" id="zykwcf15" autoheight></textarea></td>
+                    <td><textarea name="zykwcf16" id="zykwcf16" autoheight></textarea></td>
+                    <td><textarea name="zykwcf17" id="zykwcf17" autoheight></textarea></td>
+                    <td><textarea name="zykwcf18" id="zykwcf18" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td>碱活性矿物名称</td>
+                    <td><textarea name="jhxkwmc1" id="jhxkwmc1" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc2" id="jhxkwmc2" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc3" id="jhxkwmc3" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc4" id="jhxkwmc4" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc5" id="jhxkwmc5" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc6" id="jhxkwmc6" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc7" id="jhxkwmc7" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc8" id="jhxkwmc8" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc9" id="jhxkwmc9" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc10" id="jhxkwmc10" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc11" id="jhxkwmc11" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc12" id="jhxkwmc12" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc13" id="jhxkwmc13" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc14" id="jhxkwmc14" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc15" id="jhxkwmc15" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc16" id="jhxkwmc16" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc17" id="jhxkwmc17" autoheight></textarea></td>
+                    <td><textarea name="jhxkwmc18" id="jhxkwmc18" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td>碱活性矿物的百分含量(%)</td>
+                    <td><textarea name="jhxkwdbfhl1" id="jhxkwdbfhl1" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl2" id="jhxkwdbfhl2" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl3" id="jhxkwdbfhl3" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl4" id="jhxkwdbfhl4" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl5" id="jhxkwdbfhl5" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl6" id="jhxkwdbfhl6" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl7" id="jhxkwdbfhl7" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl8" id="jhxkwdbfhl8" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl9" id="jhxkwdbfhl9" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl10" id="jhxkwdbfhl10" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl11" id="jhxkwdbfhl11" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl12" id="jhxkwdbfhl12" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl13" id="jhxkwdbfhl13" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl14" id="jhxkwdbfhl14" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl15" id="jhxkwdbfhl15" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl16" id="jhxkwdbfhl16" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl17" id="jhxkwdbfhl17" autoheight></textarea></td>
+                    <td><textarea name="jhxkwdbfhl18" id="jhxkwdbfhl18" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td>碱活性矿物占样品总质量的百分率(%)</td>
+                    <td colspan="18"><textarea name="jhxkwzypzzldbfl" id="jhxkwzypzzldbfl" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="19"><b>(2)砂浆棒法</b></td>
+                </tr>
+                <tr>
+                    <td colspan="4">试件编号</td>
+                    <td colspan="3">侧头长度L$_{d}$(mm)</td>
+                    <td colspan="3">试件基准长度L$_{0}$(mm)</td>
+                    <td colspan="3">试件t天后长度L$_{t}$(mm)</td>
+                    <td colspan="3">长度膨胀率$\varepsilon$$_{t}$(%)</td>
+                    <td colspan="3">平均值</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><textarea name="sjbh1" id="sjbh1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="ctcd1" id="ctcd1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjjzcd1" id="sjjzcd1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjtthcd1" id="sjtthcd1" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="cdpzl1" id="cdpzl1" autoheight></textarea></td>
+                    <td colspan="3" rowspan="3"><input type="text" id="pjz" name="pjz"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><textarea name="sjbh2" id="sjbh2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="ctcd2" id="ctcd2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjjzcd2" id="sjjzcd2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjtthcd2" id="sjtthcd2" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="cdpzl2" id="cdpzl2" autoheight></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><textarea name="sjbh3" id="sjbh3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="ctcd3" id="ctcd3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjjzcd3" id="sjjzcd3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="sjtthcd3" id="sjtthcd3" autoheight></textarea></td>
+                    <td colspan="3"><textarea name="cdpzl3" id="cdpzl3" autoheight></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tableRemark"></div>
+    </div>
+</form>
+</body>
+<script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('head', 'tail', function () {
+        $('#tiTableName').text('混凝土用骨料碱活性试验记录(二)');
+    });
+</script>
+</html>

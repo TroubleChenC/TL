@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+
+
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+    .head .tablecontent {
+      display: none;
+    }
+
+    .head .tablename {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-horizontal">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <div style="height: 20px;"></div>
+        <table class="layui-table">
+          <tr>
+            <td>记录编号</td>
+            <td>委托单位</td>
+            <td>工程名称</td>
+            <td>施工部位</td>
+            <td>试件编号</td>
+            <td style="width: 70px;">制件日期</td>
+            <td style="width: 70px;">试验日期</td>
+            <td>龄期(d)</td>
+            <td style="width: 70px;">试件尺寸(mm)</td>
+            <td>承压面积A(mm²)</td>
+            <td>破坏荷载P(kN)</td>
+            <td>抗压强度$f_{cu,i}$(MPa)</td>
+            <td>折算系数K</td>
+            <td>抗压强度组值$f_{cu}$(MPa)</td>
+            <td>压力机名称</td>
+            <td>示值范围</td>
+            <td>分辨率</td>
+            <td>试验人</td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="jlbh1" id="jlbh1" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="wtdw1" id="wtdw1" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="gcmc1" id="gcmc1" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sgbw1" id="sgbw1" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sjbh1" id="sjbh1" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="zjrq1" name="zjrq1"></td>
+            <td rowspan="3"><input type="text" id="syrq1" name="syrq1"></td>
+            <td rowspan="3"><input type="text" id="lingq1" name="lingq1"></td>
+            <td rowspan="3">
+              <select name="sjcc1" id="sjcc1"></select>
+            </td>
+            <td rowspan="3"><input type="text" id="cymj1" name="cymj1"></td>
+            <td><input type="text" id="phhz11" name="phhz11"></td>
+            <td><input type="text" id="kyqd11" name="kyqd11"></td>
+            <td rowspan="3"><input type="text" id="zsxs1" name="zsxs1"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz1" name="kyqdzz1"></td>
+            <td rowspan="3"><textarea name="yljmc1" id="yljmc1" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="szfw1" name="szfw1"></td>
+            <td rowspan="3"><input type="text" id="fbl1" name="fbl1"></td>
+            <td rowspan="3"><input type="text" id="syr1" name="syr1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz12" name="phhz12"></td>
+            <td><input type="text" id="kyqd12" name="kyqd12"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz13" name="phhz13"></td>
+            <td><input type="text" id="kyqd13" name="kyqd13"></td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="jlbh2" id="jlbh2" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="wtdw2" id="wtdw2" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="gcmc2" id="gcmc2" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sgbw2" id="sgbw2" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sjbh2" id="sjbh2" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="zjrq2" name="zjrq2"></td>
+            <td rowspan="3"><input type="text" id="syrq2" name="syrq2"></td>
+            <td rowspan="3"><input type="text" id="lingq2" name="lingq2"></td>
+            <td rowspan="3"><select name="sjcc2" id="sjcc2"></select></td>
+            <td rowspan="3"><input type="text" id="cymj2" name="cymj2"></td>
+            <td><input type="text" id="phhz21" name="phhz21"></td>
+            <td><input type="text" id="kyqd21" name="kyqd21"></td>
+            <td rowspan="3"><input type="text" id="zsxs2" name="zsxs2"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz2" name="kyqdzz2"></td>
+            <td rowspan="3"><textarea name="yljmc2" id="yljmc2" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="szfw2" name="szfw2"></td>
+            <td rowspan="3"><input type="text" id="fbl2" name="fbl2"></td>
+            <td rowspan="3"><input type="text" id="syr2" name="syr2"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz22" name="phhz22"></td>
+            <td><input type="text" id="kyqd22" name="kyqd22"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz23" name="phhz23"></td>
+            <td><input type="text" id="kyqd23" name="kyqd23"></td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="jlbh3" id="jlbh3" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="wtdw3" id="wtdw3" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="gcmc3" id="gcmc3" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sgbw3" id="sgbw3" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sjbh3" id="sjbh3" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="zjrq3" name="zjrq3"></td>
+            <td rowspan="3"><input type="text" id="syrq3" name="syrq3"></td>
+            <td rowspan="3"><input type="text" id="lingq3" name="lingq3"></td>
+            <td rowspan="3"><select name="sjcc3" id="sjcc3"></select></td>
+            <td rowspan="3"><input type="text" id="cymj3" name="cymj3"></td>
+            <td><input type="text" id="phhz31" name="phhz31"></td>
+            <td><input type="text" id="kyqd31" name="kyqd31"></td>
+            <td rowspan="3"><input type="text" id="zsxs3" name="zsxs3"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz3" name="kyqdzz3"></td>
+            <td rowspan="3"><textarea name="yljmc3" id="yljmc3" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="szfw3" name="szfw3"></td>
+            <td rowspan="3"><input type="text" id="fbl3" name="fbl3"></td>
+            <td rowspan="3"><input type="text" id="syr3" name="syr3"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz32" name="phhz32"></td>
+            <td><input type="text" id="kyqd32" name="kyqd32"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz33" name="phhz33"></td>
+            <td><input type="text" id="kyqd33" name="kyqd33"></td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="jlbh4" id="jlbh4" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="wtdw4" id="wtdw4" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="gcmc4" id="gcmc4" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sgbw4" id="sgbw4" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sjbh4" id="sjbh4" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="zjrq4" name="zjrq4"></td>
+            <td rowspan="3"><input type="text" id="syrq4" name="syrq4"></td>
+            <td rowspan="3"><input type="text" id="lingq4" name="lingq4"></td>
+            <td rowspan="3"><select name="sjcc4" id="sjcc4"></select></td>
+            <td rowspan="3"><input type="text" id="cymj4" name="cymj4"></td>
+            <td><input type="text" id="phhz41" name="phhz41"></td>
+            <td><input type="text" id="kyqd41" name="kyqd41"></td>
+            <td rowspan="3"><input type="text" id="zsxs4" name="zsxs4"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz4" name="kyqdzz4"></td>
+            <td rowspan="3"><textarea name="yljmc4" id="yljmc4" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="szfw4" name="szfw4"></td>
+            <td rowspan="3"><input type="text" id="fbl4" name="fbl4"></td>
+            <td rowspan="3"><input type="text" id="syr4" name="syr4"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz42" name="phhz42"></td>
+            <td><input type="text" id="kyqd42" name="kyqd42"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz43" name="phhz43"></td>
+            <td><input type="text" id="kyqd43" name="kyqd43"></td>
+          </tr>
+          <tr>
+            <td rowspan="3"><textarea name="jlbh5" id="jlbh5" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="wtdw5" id="wtdw5" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="gcmc5" id="gcmc5" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sgbw5" id="sgbw5" autoheight></textarea></td>
+            <td rowspan="3"><textarea name="sjbh5" id="sjbh5" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="zjrq5" name="zjrq5"></td>
+            <td rowspan="3"><input type="text" id="syrq5" name="syrq5"></td>
+            <td rowspan="3"><input type="text" id="lingq5" name="lingq5"></td>
+            <td rowspan="3"><select name="sjcc5" id="sjcc5"></select></td>
+            <td rowspan="3"><input type="text" id="cymj5" name="cymj5"></td>
+            <td><input type="text" id="phhz51" name="phhz51"></td>
+            <td><input type="text" id="kyqd51" name="kyqd51"></td>
+            <td rowspan="3"><input type="text" id="zsxs5" name="zsxs5"></td>
+            <td rowspan="3"><input type="text" id="kyqdzz5" name="kyqdzz5"></td>
+            <td rowspan="3"><textarea name="yljmc5" id="yljmc5" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="szfw5" name="szfw5"></td>
+            <td rowspan="3"><input type="text" id="fbl5" name="fbl5"></td>
+            <td rowspan="3"><input type="text" id="syr5" name="syr5"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz52" name="phhz52"></td>
+            <td><input type="text" id="kyqd52" name="kyqd52"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="phhz53" name="phhz53"></td>
+            <td><input type="text" id="kyqd53" name="kyqd53"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  $('[id^=syrq], [id^=cymj], [id^=kyqd]').prop('readonly', true);
+
+  $('[id^=sjcc]').editableSelect();
+
+  layui.use('laydate', function() {
+    $('[id^=zjrq]').each(function() {
+      layui.laydate.render({
+        elem: '#' + this.id,
+        done: jsrq,
+      })
+    })
+  })
+
+  // 日期
+  fixWhenBlur(['lingq'], 0, jsrq);
+  function jsrq() {
+    for (let i = 1; i <= 5; i++) {
+      let d = $('#zjrq' + i).val(), lq = $('#lingq' + i).val();
+      let res = '';
+      if (validNum(d, lq)) {
+        let date = new Date(d);
+        date.setDate(date.getDate() + parseFloat(lq));
+        res = date.format('yyyy-MM-dd');
+      }
+      $('#syrq' + i).val(res);
+    }
+  }
+
+  initTable('', '', function () {
+  });
+
+  // 承压面积
+  $('[id^=sjcc]').blur(function() {
+    for (let i = 1; i <= 5; i++) {
+      let cc = $('#sjcc' + i).val();
+      let res = isValidSJCC(cc);
+      let mj = '';
+      if (res) {
+        mj = res.mj.toRound(1);
+      }
+      $('#cymj' + i).val(mj);
+    }
+  })
+
+  // 抗压强度
+  fixWhenBlur(['phhz', 'zsxs'], null, kyqd);
+  function kyqd() {
+    for (let i = 1; i <= 5; i++) {
+      let S = $('#cymj' + i).val();
+      for (let j = 1; j <= 3; j++) {
+        let f = $('#phhz' + i + j).val();
+        let res = '';
+        if (validNum(S, f)) {
+          res = f / S * 1000;
+          res = res.toRound(1);
+        }
+        $('#kyqd' + i + j).val(res);
+      }
+
+      let avg = getAvgByRange('kyqd' + i, 1, 3);
+      let xs = $('#zsxs' + i).val();
+      xs = validNum(xs) ? xs : 1;
+      let res = '';
+      if (validNum(avg)) {
+        res = avg.toRound(1) * xs;
+        res = res.toRound(1);
+      }
+      $('#kyqdzz' + i).val(res);
+    }
+  }
+</script>
+</html>

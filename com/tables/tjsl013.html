@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+  <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+  <link rel="stylesheet" href="../../css/tableCommon.css"/>
+  <script src="../../plugins/layui/layui.js"></script>
+  <script src="../../js/jquery-1.8.3.min.js"></script>
+  <script src="../../plugins/layer/layer.js"></script>
+  <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+  <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+  <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+  <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+
+  </script>
+  <script src="../../js/public.js"></script>
+  <script src="../../js/table.js"></script>
+  <script src="../../js/MathUtils.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <form id="form" action="" method="post" onsubmit="return false;">
+    <div class="paperA4 paperA4-vertical">
+      <div class="tableHeader"></div>
+      <div class="tableContent">
+        <table class="layui-table">
+          <tr>
+            <td colspan="6"><b>(3)化学法</b></td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="width: 80px;">质量法<br/><br/>c($SiO_{2}$)</td>
+            <td>试液数量(mL)</td>
+            <td colspan="2">反应稀释液中二氧化硅含量<br/>m$_{1}$(g)</td>
+            <td>空白试验反应稀释液<br/>中二氧化硅含量m$_{2}$(g)</td>
+            <td>c(SiO$_{2}$)<br/>(mol/L)</td>
+          </tr>
+          <tr>
+            <td>100</td>
+            <td colspan="2"><textarea name="fyxsyzeyhghl" id="fyxsyzeyhghl" autoheight></textarea></td>
+            <td><textarea name="kbsyfyxsyzeyhghl" id="kbsyfyxsyzeyhghl" autoheight></textarea></td>
+            <td><textarea name="csio" id="csio" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td rowspan="2">比色法<br/><br/>c(SiO$_{2}$)</td>
+            <td>试液数量<br/>V$_{0}$(mL)</td>
+            <td colspan="2">反应稀释液中二氧化硅含量<br/>$m_{1}$(g)</td>
+            <td>空白试验反应稀释液<br/>中二氧化硅含量$m_{2}$(g)</td>
+            <td>c(SiO$_{2}$)<br/>(mol/L)</td>
+          </tr>
+          <tr>
+            <td><textarea name="sysy" id="sysy" autoheight></textarea></td>
+            <td colspan="2"><textarea name="fyxsyzeyhghl1" id="fyxsyzeyhghl1" autoheight></textarea></td>
+            <td><textarea name="kbsyfyxsyzeyhghl1" id="kbsyfyxsyzeyhghl1" autoheight></textarea></td>
+            <td><textarea name="csio1" id="csio1" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td rowspan="2">单终点<br/>碱浓度<br/>降低值<br/>c(NaOH)</td>
+            <td>盐酸浓度<br/>c(HCL)<br/>(mol/L)</td>
+            <td>吸取反应稀释液<br/>数量<br/>V$_{1}$(mL)</td>
+            <td>滴定反应稀释液<br/>消耗盐酸溶液量<br/>V$_{2}$(mL)</td>
+            <td>滴定空白反应稀释液<br/>消耗盐酸溶液量<br/>V$_{3}$(mL)</td>
+            <td>c(NaOH)<br/>(mol/L)</td>
+          </tr>
+          <tr>
+            <td><textarea name="ysnd" id="ysnd" autoheight></textarea></td>
+            <td><textarea name="xqfyxsysl" id="xqfyxsysl" autoheight></textarea></td>
+            <td><textarea name="ddfyxsyxhysryl" id="ddfyxsyxhysryl" autoheight></textarea></td>
+            <td><textarea name="ddkbfyxsyxhysryl" id="ddkbfyxsyxhysryl" autoheight></textarea></td>
+            <td><textarea name="cnaoh" id="cnaoh" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td rowspan="2">双终点<br/>碱浓度<br/>降低值<br/>c(NaOH)</td>
+            <td>滴定至酚酞<br/>终点消耗盐<br/>酸溶液量<br/>V$_{p}$(mL)</td>
+            <td>滴定至甲基<br/>终点消耗<br/>盐酸溶液量<br/>V$_{T}$(mL)</td>
+            <td>滴定反应稀释液<br/>消耗<br/>盐酸溶液量<br/>V$_{2}$(mL)</td>
+            <td>滴定空白反应稀释液<br/>消耗<br/>盐酸溶液量<br/>V$_{3}$(mL)</td>
+            <td>c(NaOH)<br/>(mol/L)</td>
+          </tr>
+          <tr>
+            <td><textarea name="ddzftzdxhysryl" id="ddzftzdxhysryl" autoheight></textarea></td>
+            <td><textarea name="ddzjjzdxhysryl" id="ddzjjzdxhysryl" autoheight></textarea></td>
+            <td><textarea name="ddfyxsyxhysryl1" id="ddfyxsyxhysryl1" autoheight></textarea></td>
+            <td><textarea name="ddkbfyxsyxhysryl1" id="ddkbfyxsyxhysryl1" autoheight></textarea></td>
+            <td><textarea name="cnaoh1" id="cnaoh1" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="6"><b>(4)岩石柱法</b></td>
+          </tr>
+          <tr>
+            <td colspan="2">试件<br/>编号</td>
+            <td>试件基准<br/>长度<br/>L$_{0}$(mm)</td>
+            <td>试件浸泡t天后长度<br/>L$_{1}$(mm)</td>
+            <td>长度膨胀率<br/>$\varepsilon$$_{t}$(%)</td>
+            <td>长度膨胀率最大值<br/>$\varepsilon$$_{t,max}$(%)</td>
+          </tr>
+          <tr>
+            <td colspan="2"><textarea name="sjbh1" id="sjbh1" autoheight></textarea></td>
+            <td><textarea name="sjjzcd1" id="sjjzcd1" autoheight></textarea></td>
+            <td><textarea name="sjjptthcd1" id="sjjptthcd1" autoheight></textarea></td>
+            <td><textarea name="cdpzl1" id="cdpzl1" autoheight></textarea></td>
+            <td rowspan="3"><input type="text" id="cdpzlzdz" name="cdpzlzdz"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><textarea name="sjbh2" id="sjbh2" autoheight></textarea></td>
+            <td><textarea name="sjjzcd2" id="sjjzcd2" autoheight></textarea></td>
+            <td><textarea name="sjjptthcd2" id="sjjptthcd2" autoheight></textarea></td>
+            <td><textarea name="cdpzl2" id="cdpzl2" autoheight></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2"><textarea name="sjbh3" id="sjbh3" autoheight></textarea></td>
+            <td><textarea name="sjjzcd3" id="sjjzcd3" autoheight></textarea></td>
+            <td><textarea name="sjjptthcd3" id="sjjptthcd3" autoheight></textarea></td>
+            <td><textarea name="cdpzl3" id="cdpzl3" autoheight></textarea></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableRemark"></div>
+    </div>
+  </form>
+</body>
+<script>
+  // base.remarkType = '1';  记录0  报告1
+  initTable('head', 'tail', function () {
+    $('#tiTableName').text('混凝土用骨料碱活性试验记录(三)');
+  });
+</script>
+</html>

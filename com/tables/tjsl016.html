@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all">
+    <!--<link rel="stylesheet" href="../../plugins/jquery-editable-select/jquery-editable-select.min.css">-->
+    <link rel="stylesheet" href="../../css/tableCommon.css" />
+    <script src="../../plugins/layui/layui.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <!--<script src="../../plugins/echars/echarts.min.js"></script>-->
+    <!--<script src="../../plugins/echars/ecStat.min.js"></script>-->
+    <!--<script src="../../plugins/jquery-editable-select/jquery-editable-select.min.js"></script>-->
+    <script src="../../plugins/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true,
+    }});
+  </script>
+    <script src="../../js/public.js"></script>
+    <script src="../../js/table.js"></script>
+    <script src="../../js/MathUtils.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form id="form" action="" method="post" onsubmit="return false;">
+        <div class="paperA4 paperA4-vertical">
+            <div class="tableHeader"></div>
+            <div class="tableContent">
+                <table class="layui-table table1">
+                    <tr>
+                        <td colspan="5">(8)轻粗骨料的粒型系数</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">轻粗骨料颗粒长向最大尺寸$D_{max}$(mm)</td>
+                        <td rowspan="2">轻粗骨料颗粒中间截面的最小尺寸$D_{min}$(mm)</td>
+                        <td rowspan="2">每颗的粒径系数$K'_{e,i}$<br />
+                            $K'_{e,i}$=$\frac{D_{max}}{D_{min}}$</td>
+                        <td colspan="2" style="width: 100px;">平均粒型系数<span style="width: 4px;height: 4px;border-top: 1px solid black;">$K_{e}$</span><br />
+                            <span style="width: 4px;height: 4px;border-top: 1px solid black;">$K_{e}$</span>=$\frac{\sum}{50}$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>单次值</td>
+                        <td>平均值 </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="qzklkl_max1" id="qzklkl_max1"></td>
+                        <td><input type="text" name="qzklkl_min1" id="qzklkl_min1"></td>
+                        <td><input type="text" name="klxs1" id="klxs1"></td>
+                        <td><input type="text" name="dcz1" id="dcz1"></td>
+                        <td rowspan="2"><input type="text" name="pjz1" id="pjz1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="qzklkl_max2" id="qzklkl_max2"></td>
+                        <td><input type="text" name="qzklkl_min2" id="qzklkl_min2"></td>
+                        <td><input type="text" name="klxs2" id="klxs2"></td>
+                        <td><input type="text" name="dcz2" id="dcz2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">(9)轻粗骨料1h吸水率</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">烘干样品质量<br />$m_{0}$(g)</td>
+                        <td rowspan="2">浸水试样质量<br />$m_{1}$(g)</td>
+                        <td colspan="3">吸水率$\omega$$_{a}$(%)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">$\omega_{a}=[(m_{1}-m_{0})/m_{0}]×100$</td>
+                        <td>平均值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hgyp1" id="hgyp1"></td>
+                        <td><input type="text" name="jssyzl1" id="jssyzl1"></td>
+                        <td colspan="2"><input type="text" name="xsl1" id="xsl1"></td>
+                        <td rowspan="3"><input type="text" name="pjz2" id="pjz2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hgyp2" id="hgyp2"></td>
+                        <td><input type="text" name="jssyzl2" id="jssyzl2"></td>
+                        <td colspan="2"><input type="text" name="xsl2" id="xsl2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hgyp3" id="hgyp3"></td>
+                        <td><input type="text" name="jssyzl3" id="jssyzl3"></td>
+                        <td colspan="2"><input type="text" name="xsl3" id="xsl3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">(10)轻粗骨料煮沸质量损失</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">试验前试样干质量$m_{1}$(g)</td>
+                        <td rowspan="2">试验后筛余试样干质量$m_{1}$(g)</td>
+                        <td colspan="3">煮沸质量损失$\omega$$_{f}$(%)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">$\omega$$_{f}$=[($m_{1}$-$m_{2}$)/$m_{1}$]×100</td>
+                        <td>平均值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="syqzl1" id="syqzl1"></td>
+                        <td><input type="text" name="syhzl1" id="syhzl1"></td>
+                        <td colspan="2"><input type="text" name="zfzlss1" id="zfzlss1"></td>
+                        <td rowspan="3"><input type="text" name="pjz3" id="pjz3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="syqzl2" id="syqzl2"></td>
+                        <td><input type="text" name="syhzl2" id="syhzl2"></td>
+                        <td colspan="2"><input type="text" name="zfzlss2" id="zfzlss2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="syqzl3" id="syqzl3"></td>
+                        <td><input type="text" name="syhzl3" id="syhzl3"></td>
+                        <td colspan="2"><input type="text" name="zfzlss3" id="zfzlss3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">(11)轻粗骨中SO$_{3}$含量</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">试样<br />质量<br /><b>m(g)</b></td>
+                        <td rowspan="2">灼烧恒重的瓷<br />坩埚质量<br />$m_{1}$(g)</td>
+                        <td rowspan="2">灼烧恒重的瓷坩埚和灼烧后沉淀物总质量<br />$m_{2}$(g)</td>
+                        <td colspan="2">SO$_{3}$含量$\omega$$SO_{3}$(%)<br />$\omega$$SO_{3}$=[($m_{2}$-$m_{1}$)×0.343/m]×100</td>
+                    </tr>
+                    <tr>
+                        <td>单值</td>
+                        <td>平均值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="syzl1" id="syzl1"></td>
+                        <td><input type="text" name="zs_m11" id="zs_m11"></td>
+                        <td><input type="text" name="zs_m11" id="zs_m11"></td>
+                        <td><input type="text" name="dz1" id="dz1"></td>
+                        <td rowspan="2"><input type="text" name="pjz4" id="pjz4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="syzl2" id="syzl2"></td>
+                        <td><input type="text" name="zs_m12" id="zs_m12"></td>
+                        <td><input type="text" name="zs_m22" id="zs_m22"></td>
+                        <td><input type="text" name="dz2" id="dz2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">(12)轻粗骨中有机物含量判定</td>
+                    </tr>
+                    <tr>
+                        <td>制样日期</td>
+                        <td>判定时间</td>
+                        <td colspan="3">有机物含量判定结果</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="zzyq" id="zzyq"></td>
+                        <td><input type="text" name="pdsj" id="pdsj"></td>
+                        <td colspan="3"><input type="text" name="yjwhlpdjg" id="yjwhlpdjg"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tableRemark"></div>
+        </div>
+    </form>
+</body>
+<script>
+    // base.remarkType = '1';  记录0  报告1
+    initTable('head', 'tail', function () {
+        $('#tiTableName').text('轻骨料试验记录（三）');
+    });
+</script>
+
+</html>

@@ -1,0 +1,274 @@
+.paperA4 * {
+  box-sizing: border-box;
+}
+
+/******************字体 字号******************/
+body {
+  font-family: SimSun;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.layui-table td,
+.layui-table td {
+  font-size: 12px;
+}
+
+input {
+  /*font-family: FangSong;*/
+}
+
+/****** A4纸张大小210mm*290mm 96dpi-->793px*1122px  5mm==18px  15mm==56px ******/
+/*
+  A4打印设置： 边距 15mm 15mm 15mm 25mm
+  浏览器打印默认边距：10mm
+  综上：A4实际设置大小 190mm*270mm(≈718px*1046px)  留边5mm 5mm 5mm 15mm
+*/
+.paperA4 {
+  border: 0 solid #fff9ec;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #fff9ec;
+  page-break-before: always;
+}
+
+/*由于比例原因 横向纵向宽高有细微调整 防止打印超出*/
+/*横向*/
+.paperA4-horizontal {
+  height: 716px;
+  width: 1046px;
+  border-width: 18px 18px 54px;
+}
+
+/*纵向*/
+.paperA4-vertical {
+  height: 1046px;
+  width: 716px;
+  border-width: 18px 18px 18px 54px;
+}
+
+/*多页*/
+.paper-next {
+  margin-top: 2px;
+  page-break-before: always;
+}
+
+/***********************全局样式设置***********************/
+.layui-table {
+  margin: 0;
+  border: 2px solid #000;
+  color: #000;
+  background-color: #FFF9EC;
+}
+
+.layui-table tbody tr:hover,
+.layui-table[lay-even] tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.layui-table th,
+.layui-table td {
+  padding: 1px;
+  height: 24px;
+  line-height: 16px;
+  text-align: center;
+  border-color: #000;
+  position: relative;
+}
+
+.next {
+  border-top: none;
+  margin-top: -2px;
+}
+
+.table-noborder {
+  border: none;
+  margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table-noborder th,
+.table-noborder td {
+  border: none;
+}
+
+td.table-border-bottom {
+  border-bottom: 1px solid black;
+}
+
+input[type="text"] {
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+input[type='checkbox'], input[type='radio'] {
+  vertical-align: middle;
+}
+
+/*可编辑下拉框控件*/
+input.editable-select {
+  height: 99% !important;
+  width: 99% !important;
+  border: none !important;
+}
+
+select {
+  text-align-last: center;
+  height: 100%;
+  width: 100%;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 1px;
+  vertical-align: middle;
+  word-break: break-all;
+}
+
+/*隐藏滚动条*/
+textarea[autoheight] {
+  text-align: center;
+  overflow: hidden;
+}
+
+input[readonly], textarea[readonly] {
+  background-color: #FFF9EC;
+}
+
+/*公式文本样式设置*/
+.gs {
+  font-size: 14px;
+}
+
+sub, sup {
+  font-size: 12px;
+}
+
+/*******************************表结构样式*******************************/
+.tableRemark, .tableRemark1, .tableRemark2, .tableRemark3, .tableRemark4, .tableRemark5,
+.tableRemark6 {
+  margin-top: -2px;
+}
+
+/********************************表头表尾样式********************************/
+/*表头*/
+.head .projectName {
+  text-align: center;
+  font-size: 22px;
+  box-sizing: content-box;
+  font-weight: bold;
+}
+
+.head .tablename {
+  text-align: center;
+  position: relative;
+  height: 32px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  box-sizing: content-box;
+}
+
+.head .table-num {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+}
+
+[id^=tiTableName] {
+  font-weight: bold;
+}
+
+.head .tablecontent {
+  padding-bottom: 8px;
+}
+
+.head .tablecontent table td:nth-child(odd) {
+  width: 60px;
+}
+
+.head .tablecontent table td:nth-child(even) {
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+.head textarea {
+  text-align: center;
+}
+
+/*表尾*/
+.tail .beizhu {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  line-height: normal;
+}
+
+.tail .bz {
+  /* min-height: 50px; */
+  height: calc(100% - 35px);
+  border-top: none;
+}
+
+.tail .foot {
+  margin-top: 10px;
+  border: none;
+}
+
+.tail .foot td {
+  border: none;
+  text-align: left;
+}
+
+/************************************/
+
+/*LaTex公式设置*/
+.mjx-chtml {
+  font-size: 14px !important;
+}
+
+/*可编辑下拉单*/
+input.es-input {
+  padding-right: 0 !important;
+  background: white;
+}
+
+.hide {
+  display: none;
+}
+
+/*****************************打印设置*****************************/
+@media print {
+  .paperA4 {
+    border-color: white;
+    margin: 0 auto;
+  }
+
+  select {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .noprint {
+    display: none;
+  }
+}
